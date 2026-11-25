@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Two colliding/pushing blocks A and B -->
+  <rect x="85" y="85" width="62" height="70" rx="10" fill="#2563EB" stroke="#1E3A8A" stroke-width="4"/>
+  <text x="116" y="130" text-anchor="middle" fill="#FFFFFF" font-size="28" font-weight="bold">A</text>
+  <rect x="153" y="85" width="62" height="70" rx="10" fill="#EA580C" stroke="#9A3412" stroke-width="4"/>
+  <text x="184" y="130" text-anchor="middle" fill="#FFFFFF" font-size="28" font-weight="bold">B</text>
+  <!-- Opposite Equal Force Arrows -->
+  <path d="M80 120 L22 120 M38 106 L20 120 L38 134" stroke="#2563EB" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M220 120 L278 120 M262 106 L280 120 L262 134" stroke="#EA580C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

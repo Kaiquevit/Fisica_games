@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <line x1="40" y1="195" x2="260" y2="195" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
+  <!-- Bar 1: Potential Energy Ep (Blue) -->
+  <rect x="65" y="65" width="48" height="130" rx="6" fill="#2563EB"/>
+  <text x="89" y="52" text-anchor="middle" fill="#1E3A8A" font-size="22" font-weight="bold">Ep</text>
+  <!-- Conversion Arrow -->
+  <path d="M128 130 L172 130 M158 118 L174 130 L158 142" stroke="#F97316" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Bar 2: Kinetic Energy Ec (Green) -->
+  <rect x="188" y="65" width="48" height="130" rx="6" fill="#16A34A"/>
+  <text x="212" y="52" text-anchor="middle" fill="#15803D" font-size="22" font-weight="bold">Ec</text>
+</svg>

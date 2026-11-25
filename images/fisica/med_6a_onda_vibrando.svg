@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Equilibrium axis dashed line -->
+  <line x1="20" y1="155" x2="280" y2="155" stroke="#94A3B8" stroke-width="3" stroke-dasharray="8,8"/>
+  <!-- Transverse Sine Wave -->
+  <path d="M 25 155 C 50 55, 85 55, 110 155 C 135 255, 170 255, 195 155 C 220 55, 255 55, 280 155" fill="none" stroke="#2563EB" stroke-width="9" stroke-linecap="round"/>
+  <!-- Wavelength double arrow between two crests -->
+  <path d="M68 58 L238 58 M80 48 L66 58 L80 68 M226 48 L240 58 L226 68" stroke="#F97316" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Crest markers (Cristas) -->
+  <circle cx="67" cy="80" r="8" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="237" cy="80" r="8" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- Trough marker (Vale) -->
+  <circle cx="152" cy="230" r="8" fill="#22C55E" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- Amplitude vertical arrow -->
+  <path d="M152 155 L152 218 M144 208 L152 220 L160 208" stroke="#22C55E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

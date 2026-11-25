@@ -1,46 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/sobre.css">
+    <!-- KaTeX para renderizar as fórmulas do guia pedagógico -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$', right: '$', display: false}]});"></script>
     <script defer src="./js/menu.js"></script>
-    <title>Sobre</title>
+    <title>Sobre o Projeto OPET de Física | Kaique Vitor</title>
 </head>
 <body>
     <header id="header">
-
         <div class="container">
-
             <div class="flex">
-
-                <!-- <a href="index.html"><img src="./images/brain.png.png" alt="celebro"></a> -->
-
+                <a href="index.html" class="brand-logo">⚛️ Física<span>Play</span></a>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="./page1.html">One piece</a></li>
-                        <li><a href="./pag2.html">Cartoons</a></li>
-                        <li><a href="./pag3.html">DigiPoke</a></li>
-                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="index.html">Início / Jogar</a></li>
+                        <li><a href="./page1.html">Fundamental (10-12)</a></li>
+                        <li><a href="./pag2.html">Médio (13-17)</a></li>
+                        <li><a href="./pag3.html">Física 1 (Faculdade)</a></li>
+                        <li><a href="sobre.html" class="active">Sobre o Projeto (OPET)</a></li>
                     </ul>
                 </nav>
-
             </div>
         </div>
-    </header> 
-    <section class="banner3">
-        <p>Novidades em breve....</p>
-    </section>
+    </header>
 
-    <section class="banner2">
-        <p> programa foi criado  para embarcar em uma aventura nostálgica!
-            Explore os ícones a cima e viaje no tempo com diversos personagens que marcaram uma geração. :-: Navegue
-            como um pirata em busca de tesouros escondidos, desafie monstrinhos como os famosos Pokemon ou Digimon. Se
-            preferir, divirta-se memorizando seus personagens favoritos!
-            A diversão está a um clique de distância.</p>
-    </section>
-    
+    <main class="guide-main">
+        <!-- Ficha Institucional do Projeto OPET de Física - Aluno Kaique Vitor -->
+        <section class="opet-project-card">
+            <span class="opet-badge">🎓 Apresentação do Projeto Acadêmico</span>
+            <h1>FísicaPlay — <span>Projeto OPET de Física</span></h1>
+
+            <div class="opet-author-bar">
+                <div class="opet-meta-pill">👨‍🎓 Aluno Desenvolvedor: <strong>Kaique Vitor</strong></div>
+                <div class="opet-meta-pill">🏫 Projeto: <strong>OPET de Física</strong></div>
+                <div class="opet-meta-pill">🃏 Banco Pedagógico: <strong>72 Cartas (36 Pares Complementares)</strong></div>
+                <div class="opet-meta-pill">⚔️ Modos: <strong>Só Encontrar Pares • Com Quiz • Duelo 2 Jogadores (30s)</strong></div>
+            </div>
+
+            <p class="opet-description">
+                Este projeto foi desenvolvido para a <strong>OPET de Física</strong> pelo aluno <strong>Kaique Vitor</strong> com o objetivo de transformar o jogo da memória tradicional em uma ferramenta educativa interativa de Física. Em vez de buscar imagens duplicadas, o estudante exercita o raciocínio científico conectando <strong>Pares Complementares</strong>: uma <strong>Carta Tipo A (🔍 Fenômeno, Situação ou Diagrama Vetorial)</strong> deve ser associada à sua respectiva <strong>Carta Tipo B (💡 Conceito ou ⚛️ Equação Matemática)</strong>. O sistema conta com <strong>24 cartas (12 pares) por nível</strong>, cobrindo o <strong>Ensino Fundamental</strong>, o <strong>Ensino Médio</strong> e a <strong>Física 1 Universitária</strong>, além de permitir partidas <strong>Só de Encontrar Pares</strong> ou <strong>Com Desafio Quiz</strong>, tanto individualmente quanto em <strong>Duelo de 2 Jogadores (1v1 com turnos de 30 segundos)</strong>.
+            </p>
+        </section>
+
+        <section class="guide-section">
+            <h2>🔭 Nível 1: Ensino Fundamental (10 a 12 anos) — 12 Pares (24 Cartas)</h2>
+            <p class="section-subtitle">Foco: Visual, intuitivo, cotidiano e sem matemática pesada.</p>
+            <div class="pairs-table-wrapper">
+                <table class="pairs-table">
+                    <thead>
+                        <tr>
+                            <th>Par</th>
+                            <th class="th-type-a">🔍 Carta A (Situação/Fenômeno)</th>
+                            <th class="th-type-b">💡 Carta B (Conceito/Complemento)</th>
+                            <th>Explicação Pedagógica ao Acertar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>1</strong></td><td>Newton e a Maçã Caindo</td><td>Planeta Terra puxando objetos</td><td><strong>Gravidade!</strong> Força invisível que puxa tudo para o chão e mantém os planetas em órbita.</td></tr>
+                        <tr><td><strong>2</strong></td><td>Chaleira fervendo (Vapor)</td><td>Cubo de gelo derretendo</td><td><strong>Estados da Matéria!</strong> O calor agita as moléculas, mudando a água entre sólida, líquida e gasosa.</td></tr>
+                        <tr><td><strong>3</strong></td><td>Ímã atraindo pregos</td><td>Bússola apontando o Norte</td><td><strong>Magnetismo!</strong> Ímãs têm polos Norte e Sul e criam um campo que atrai metais e orienta bússolas.</td></tr>
+                        <tr><td><strong>4</strong></td><td>Prisma dividindo luz branca</td><td>Gota de chuva + Luz do Sol</td><td><strong>Refração da Luz!</strong> A luz branca é a mistura de todas as cores do arco-íris.</td></tr>
+                        <tr><td><strong>5</strong></td><td>Alavanca levantando peso</td><td>Ponto de apoio (Fulcro)</td><td><strong>Máquinas Simples!</strong> Com uma alavanca e ponto de apoio, multiplicamos nossa força.</td></tr>
+                        <tr><td><strong>6</strong></td><td>Circuito com pilha e fio</td><td>Lâmpada acesa</td><td><strong>Corrente Elétrica!</strong> Em circuito fechado, os elétrons correm da pilha até a lâmpada.</td></tr>
+                        <tr><td><strong>7</strong></td><td>Sino vibrando no ar</td><td>Ouvido captando ondas sonoras</td><td><strong>Ondas Sonoras!</strong> O som nasce da vibração e viaja pelo ar como ondas mecânicas.</td></tr>
+                        <tr><td><strong>8</strong></td><td>Tênis antiderrapante no asfalto</td><td>Patins deslizando no gelo</td><td><strong>Força de Atrito!</strong> Superfícies rugosas geram atrito para frear; no gelo liso o atrito é mínimo.</td></tr>
+                        <tr><td><strong>9</strong></td><td>Barco flutuando no mar</td><td>Bola flutuando vs Âncora afundando</td><td><strong>Empuxo (Arquimedes)!</strong> Líquidos exercem uma força vertical para cima sobre corpos imersos.</td></tr>
+                        <tr><td><strong>10</strong></td><td>Canudo e pressão do ar</td><td>Balão inflado com pressão interna</td><td><strong>Pressão Atmosférica!</strong> O ar exerce pressão sobre superfícies e líquidos em todas as direções.</td></tr>
+                        <tr><td><strong>11</strong></td><td>Raio de luz refletindo no espelho</td><td>Periscópio com dois espelhos</td><td><strong>Reflexão da Luz!</strong> Superfícies polidas refletem a luz mantendo o mesmo ângulo de incidência.</td></tr>
+                        <tr><td><strong>12</strong></td><td>Painel solar captando luz do Sol</td><td>Casa iluminada por energia limpa</td><td><strong>Transformação de Energia!</strong> Placas solares convertem energia luminosa em energia elétrica.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="guide-section">
+            <h2>⚛️ Nível 2: Ensino Médio (13 a 17 anos) — 12 Pares (24 Cartas)</h2>
+            <p class="section-subtitle">Foco: Relação entre fenômeno prático, grandezas físicas e equações clássicas.</p>
+            <div class="pairs-table-wrapper">
+                <table class="pairs-table">
+                    <thead>
+                        <tr>
+                            <th>Par</th>
+                            <th class="th-type-a">🔍 Carta A (Cenário/Gráfico)</th>
+                            <th class="th-type-b">⚛️ Carta B (Fórmula/Lei)</th>
+                            <th>Explicação Pedagógica ao Acertar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>1</strong></td><td>Carro acelerando na pista</td><td>$v = \frac{\Delta S}{\Delta t}$ e $a = \frac{\Delta v}{\Delta t}$</td><td><strong>Cinemática!</strong> Velocidade média e taxa de variação temporal da velocidade (aceleração).</td></tr>
+                        <tr><td><strong>2</strong></td><td>Pessoa empurrando caixa pesada</td><td>$F_R = m \cdot a$</td><td><strong>2ª Lei de Newton!</strong> A força resultante é igual ao produto da massa pela aceleração.</td></tr>
+                        <tr><td><strong>3</strong></td><td>Montanha-russa no topo</td><td>$E_p = mgh$ e $E_c = \frac{mv^2}{2}$</td><td><strong>Conservação de Energia!</strong> Conversão entre Energia Potencial Gravitacional e Cinética.</td></tr>
+                        <tr><td><strong>4</strong></td><td>Foguete decolando</td><td>$\vec{F}_{AB} = -\vec{F}_{BA}$</td><td><strong>3ª Lei de Newton!</strong> Toda ação gera uma reação de mesma intensidade e sentido oposto.</td></tr>
+                        <tr><td><strong>5</strong></td><td>Resistor aquecendo (Efeito Joule)</td><td>$U = R \cdot i$</td><td><strong>1ª Lei de Ohm!</strong> Relação entre tensão ($U$), resistência ($R$) e corrente elétrica ($i$).</td></tr>
+                        <tr><td><strong>6</strong></td><td>Onda vibrando (Crista e Vale)</td><td>$v = \lambda \cdot f$</td><td><strong>Ondulatória!</strong> A velocidade de uma onda é o produto do comprimento ($\lambda$) pela frequência ($f$).</td></tr>
+                        <tr><td><strong>7</strong></td><td>Béquer aquecido com termômetro</td><td>$Q = m \cdot c \cdot \Delta T$</td><td><strong>Calorimetria!</strong> Quantidade de calor sensível para variar a temperatura de um corpo.</td></tr>
+                        <tr><td><strong>8</strong></td><td>Êmbolo comprimindo gás ideal</td><td>$P \cdot V = n \cdot R \cdot T$</td><td><strong>Equação de Clapeyron!</strong> Relação de estado entre pressão, volume e temperatura de um gás ideal.</td></tr>
+                        <tr><td><strong>9</strong></td><td>Submarino em águas profundas</td><td>$P = P_0 + \rho \cdot g \cdot h$</td><td><strong>Teorema de Stevin!</strong> Variação da pressão hidrostática com a profundidade $h$.</td></tr>
+                        <tr><td><strong>10</strong></td><td>Cargas elétricas $+q_1$ e $-q_2$</td><td>$F_e = k_0 \frac{|q_1 \cdot q_2|}{d^2}$</td><td><strong>Lei de Coulomb!</strong> Força eletrostática inversamente proporcional ao quadrado da distância.</td></tr>
+                        <tr><td><strong>11</strong></td><td>Raio laser refratando na água</td><td>$n_1 \sin\theta_1 = n_2 \sin\theta_2$</td><td><strong>Lei de Snell-Descartes!</strong> Desvio angular da luz ao mudar de meio refringente.</td></tr>
+                        <tr><td><strong>12</strong></td><td>Trajetória circular de raio $R$</td><td>$F_{cp} = \frac{m \cdot v^2}{R}$</td><td><strong>Força Centrípeta!</strong> Força resultante voltada para o centro da trajetória curva.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="guide-section">
+            <h2>🎓 Nível 3: Física 1 — Faculdade (Ensino Superior) — 12 Pares (24 Cartas)</h2>
+            <p class="section-subtitle">Foco: Mecânica Clássica Universitária com Cálculo Diferencial/Integral, Álgebra Vetorial e Equações Diferenciais.</p>
+            <div class="pairs-table-wrapper">
+                <table class="pairs-table">
+                    <thead>
+                        <tr>
+                            <th>Par</th>
+                            <th class="th-type-a">🔍 Carta A (Diagrama Vetorial/Gráfico)</th>
+                            <th class="th-type-b">⚛️ Carta B (Equação Diferencial/Integral)</th>
+                            <th>Explicação Pedagógica ao Acertar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>1</strong></td><td>Trajetória Curva 2D ($\vec{r}, \vec{v}, \vec{a}$)</td><td>$\vec{v} = \frac{d\vec{r}}{dt}$ e $\vec{a} = \frac{d^2\vec{r}}{dt^2}$</td><td><strong>Cinemática Vetorial Diferencial!</strong> Derivadas temporais de 1ª e 2ª ordem do vetor posição.</td></tr>
+                        <tr><td><strong>2</strong></td><td>Integral da curva de força $F(x)$</td><td>$W = \int_{\vec{r}_1}^{\vec{r}_2} \vec{F} \cdot d\vec{r} = \Delta K$</td><td><strong>Teorema Trabalho-Energia!</strong> Integral de linha de uma força variável ao longo do deslocamento.</td></tr>
+                        <tr><td><strong>3</strong></td><td>Colisão e vetores momento linear</td><td>$\vec{J} = \int_{t_1}^{t_2} \vec{F}\,dt = \Delta\vec{p}$</td><td><strong>Teorema Impulso-Momento!</strong> Integral temporal da força resultante e conservação de $\vec{p}$.</td></tr>
+                        <tr><td><strong>4</strong></td><td>Alavanca rígida ($\vec{r}$ e $\vec{F}$)</td><td>$\vec{\tau} = \vec{r} \times \vec{F}$ e $\sum \tau_z = I \alpha_z$</td><td><strong>Torque e Rotação!</strong> Produto vetorial do torque e 2ª Lei de Newton para rotação.</td></tr>
+                        <tr><td><strong>5</strong></td><td>Giroscópio em rotação axial $\vec{L}$</td><td>$\vec{L} = \vec{r} \times \vec{p} = I\vec{\omega}$</td><td><strong>Conservação do Momento Angular!</strong> Invariância de $\vec{L}$ quando o torque externo resultante é nulo.</td></tr>
+                        <tr><td><strong>6</strong></td><td>Oscilador Massa-Mola ($F = -kx$)</td><td>$\frac{d^2x}{dt^2} + \frac{k}{m}x = 0$</td><td><strong>EDO do MHS!</strong> Equação diferencial harmônica com frequência angular $\omega = \sqrt{k/m}$.</td></tr>
+                        <tr><td><strong>7</strong></td><td>Poço de Energia Potencial $U(x)$</td><td>$\vec{F}(\vec{r}) = -\nabla U(\vec{r})$</td><td><strong>Força Conservativa!</strong> Negativo do gradiente da função de energia potencial.</td></tr>
+                        <tr><td><strong>8</strong></td><td>Órbita Elíptica de Kepler</td><td>$\vec{F}_G = -G\frac{M \cdot m}{r^2}\hat{r}$</td><td><strong>Gravitação Universal Vetorial!</strong> Força central gravitacional e conservação do momento angular orbital.</td></tr>
+                        <tr><td><strong>9</strong></td><td>Corpo contínuo ($dm$ e $\vec{r}_{\text{CM}}$)</td><td>$\vec{r}_{\text{CM}} = \frac{1}{M}\int \vec{r}\,dm$</td><td><strong>Centro de Massa Contínuo!</strong> Integral ponderada de massa e movimento translacional do sistema.</td></tr>
+                        <tr><td><strong>10</strong></td><td>Cilindro com eixo CM e eixo paralelo $d$</td><td>$I = I_{\text{CM}} + M \cdot d^2$</td><td><strong>Teorema de Steiner!</strong> Cálculo do momento de inércia em eixos paralelos deslocados.</td></tr>
+                        <tr><td><strong>11</strong></td><td>Roda rolando sem deslizar ($v_{\text{CM}}, \omega$)</td><td>$K = \frac{1}{2}Mv_{\text{CM}}^2 + \frac{1}{2}I_{\text{CM}}\omega^2$</td><td><strong>Rolamento de Corpo Rígido!</strong> Soma das energias cinéticas de translação e rotação ($v_{\text{CM}} = \omega R$).</td></tr>
+                        <tr><td><strong>12</strong></td><td>Oscilação com envelope exponencial</td><td>$m\frac{d^2x}{dt^2} + b\frac{dx}{dt} + kx = 0$</td><td><strong>MHS Amortecido!</strong> EDO com termo dissipativo viscoso e decaimento exponencial da amplitude.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

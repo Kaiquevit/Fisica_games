@@ -1,25 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/game.css">
+    <!-- KaTeX para renderizar fórmulas matemáticas nítidas nas cartas do Ensino Médio e Física 1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="../js/avatar.js"></script>
     <script defer src="../js/game.js"></script>
-    <title>Memory Game</title>
+    <title>FísicaPlay | Projeto OPET de Física - Kaique Vitor</title>
 </head>
 <body>
 
     <main>
+        <!-- Cabeçalho do Tabuleiro -->
+        <header class="game-header">
+            <div class="header-top">
+                <!-- Crachá Modo Solo (Escondido quando está no Modo Duelo 1v1) -->
+                <div class="scientist-badge" id="solo-player-badge">
+                    <a href="../index.html" class="btn-back" title="Voltar e editar Avatar/Nível">⬅ Início</a>
+                    <div class="header-avatar" id="header-avatar-box" title="Seu Avatar de Cientista"></div>
+                    <div class="player-meta">
+                        <span class="player">Cientista</span>
+                        <span class="player-title" id="player-title-badge">Físico Experimental</span>
+                    </div>
+                </div>
 
-        <header>
-          <span class="player"> </span>
-          <span>Tempo:</span>
-          <span class="timer">00</span>
+                <!-- Botão Voltar visível apenas no Modo Duelo -->
+                <a href="../index.html" class="btn-back hidden" id="duel-back-btn" title="Voltar para a Tela Inicial">⬅ Início / Nomes</a>
+
+                <!-- Seletores rápidos de Nível, Modo e Quantidade de Cartas -->
+                <div class="controls-group">
+                    <div class="level-switch-wrapper">
+                        <label for="level-select" class="info-label">Nível:</label>
+                        <select id="level-select" class="level-select">
+                            <option value="fundamental">🔭 Fundamental (10-12)</option>
+                            <option value="medio">🎨 Médio 13-17 (Médio • Desenhos + Dicas)</option>
+                            <option value="medio_dificil">⚛️ Médio 13-17 (Difícil • Só Fórmulas)</option>
+                            <option value="faculdade">🛠️ Física 1 (Médio • Visual + Guiado)</option>
+                            <option value="faculdade_dificil">🎓 Física 1 (Difícil • Cálculo Puro)</option>
+                        </select>
+                    </div>
+
+                    <div class="level-switch-wrapper">
+                        <label for="mode-select" class="info-label">Modo:</label>
+                        <select id="mode-select" class="level-select">
+                            <option value="duelo_pares">⚔️ Duelo 1v1: Só Pares (30s)</option>
+                            <option value="duelo">🧠 Duelo 1v1: Pares + Quiz (30s)</option>
+                            <option value="solo_pares">🧩 Solo: Só Encontrar Pares</option>
+                            <option value="desafio">🔥 Solo: Desafio + Quiz</option>
+                            <option value="sobrevivencia">⚡ Solo: Sobrevivência</option>
+                            <option value="exploracao">📘 Solo: Estudo Livre + Quiz</option>
+                        </select>
+                    </div>
+
+                    <div class="level-switch-wrapper">
+                        <label for="deck-size-select" class="info-label">Cartas:</label>
+                        <select id="deck-size-select" class="level-select">
+                            <option value="12" selected>24 Cartas (12 Pares)</option>
+                            <option value="9">18 Cartas (9 Pares)</option>
+                            <option value="6">12 Cartas (6 Pares)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Estatísticas da Partida (Modo Solo) -->
+                <div class="stats-group" id="solo-stats-group">
+                    <div class="stat-pill">
+                        <span class="info-label">Pares:</span>
+                        <span class="pairs-count">0/12</span>
+                    </div>
+                    <div class="stat-pill xp-pill">
+                        <span class="info-label">⭐ XP:</span>
+                        <span id="xp-score" class="xp-val">0</span>
+                    </div>
+                    <div class="stat-pill combo-pill" id="combo-pill">
+                        <span id="combo-text">🔥 x1</span>
+                    </div>
+                    <div class="stat-pill lives-pill hidden" id="lives-pill" title="Vidas restantes no Modo Sobrevivência">
+                        <span id="lives-display">❤️❤️❤️❤️❤️</span>
+                    </div>
+                    <div class="stat-pill timer-pill" id="timer-pill">
+                        <span class="info-label" id="timer-label">⏱ Tempo:</span>
+                        <span class="timer">00</span><span>s</span>
+                    </div>
+                </div>
+
+                <button type="button" id="btn-restart" class="btn-restart" title="Reiniciar Partida">🔄 Reiniciar</button>
+            </div>
+
+            <!-- PLACAR DE DUELO 2 JOGADORES (1v1 - Turnos de 30s) -->
+            <div id="duel-scoreboard" class="duel-scoreboard hidden">
+                <!-- Card Jogador 1 -->
+                <div id="duel-card-p1" class="duel-player-card duel-player-card--p1 active-turn">
+                    <div class="duel-avatar" id="duel-p1-avatar"></div>
+                    <div class="duel-player-info">
+                        <div class="duel-name-row">
+                            <span id="duel-p1-name" class="duel-name">Jogador 1</span>
+                            <span id="duel-p1-turn-tag" class="duel-turn-tag">🎯 SUA VEZ</span>
+                        </div>
+                        <span id="duel-p1-title" class="duel-subtitle">Físico Experimental</span>
+                        <div class="duel-metrics">
+                            <span class="duel-pairs-badge"><strong id="duel-p1-pairs">0</strong> Pares</span>
+                            <span class="duel-xp-badge">⭐ <span id="duel-p1-xp">0</span> XP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Relógio Central de Turno (30s) -->
+                <div class="duel-center-clock" id="duel-center-clock">
+                    <span class="duel-vs-badge">⚔️ TURNO ATUAL</span>
+                    <div class="duel-timer-value">
+                        <span id="duel-turn-seconds">30</span><small>s</small>
+                    </div>
+                    <div class="duel-progress-track">
+                        <div id="duel-progress-bar" class="duel-progress-bar"></div>
+                    </div>
+                    <span id="duel-turn-status" class="duel-turn-status">Escolha 2 cartas!</span>
+                </div>
+
+                <!-- Card Jogador 2 -->
+                <div id="duel-card-p2" class="duel-player-card duel-player-card--p2">
+                    <div class="duel-avatar" id="duel-p2-avatar"></div>
+                    <div class="duel-player-info">
+                        <div class="duel-name-row">
+                            <span id="duel-p2-name" class="duel-name">Jogador 2</span>
+                            <span id="duel-p2-turn-tag" class="duel-turn-tag hidden">🎯 SUA VEZ</span>
+                        </div>
+                        <span id="duel-p2-title" class="duel-subtitle">Engenheiro Quântico</span>
+                        <div class="duel-metrics">
+                            <span class="duel-pairs-badge"><strong id="duel-p2-pairs">0</strong> Pares</span>
+                            <span class="duel-xp-badge">⭐ <span id="duel-p2-xp">0</span> XP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner de Aviso de Troca de Turno / Evento -->
+            <div id="turn-toast" class="turn-toast hidden" role="status" aria-live="polite"></div>
+
+            <!-- Barra de Power-ups de Laboratório + Legenda UX -->
+            <div class="lab-toolbar">
+                <div class="powerups-bar">
+                    <span class="powerup-title">🧪 Lab Power-ups:</span>
+                    <button type="button" id="pw-radar" class="btn-powerup" title="Espia todas as cartas fechadas por 1,8 segundo">
+                        🔭 Radar Quântico <span class="pw-count">(1)</span>
+                    </button>
+                    <button type="button" id="pw-freeze" class="btn-powerup" title="Congela o cronômetro por 12 segundos (Zero Absoluto 0 K)">
+                        ❄️ Zero Absoluto <span class="pw-count">(1)</span>
+                    </button>
+                    <button type="button" id="pw-magnet" class="btn-powerup" title="Destaca magneticamente um par complementar no tabuleiro!">
+                        🧲 Atrator Magnético <span class="pw-count">(1)</span>
+                    </button>
+                </div>
+
+                <!-- Legenda UX: Carta A vs Carta B -->
+                <div class="ux-legend-bar">
+                    <span class="legend-badge badge-a">🔍 Carta A (Azul): Fenômeno/Diagrama</span>
+                    <span class="legend-connector">⇄</span>
+                    <span class="legend-badge badge-b" id="legend-badge-b">💡 Carta B (Laranja): Conceito/Fórmula</span>
+                </div>
+            </div>
         </header>
-        
-        <div class="grid"></div>
-      </main>
-    
+
+        <!-- Grid de Cartas (24 Cartas = 12 Pares por padrão) -->
+        <div class="grid grid-24" aria-label="Tabuleiro do Jogo da Memória de Física"></div>
+
+        <!-- Rodapé Institucional do Projeto OPET de Física - Kaique Vitor -->
+        <footer class="game-project-footer">
+            🎓 Projeto Educativo desenvolvido para a <strong>OPET de Física</strong> • Aluno Desenvolvedor: <strong>Kaique Vitor</strong>
+        </footer>
+    </main>
+
+    <!-- Modal Educativo + Desafio Quiz (O Quiz aparece apenas nos modos com Quiz!) -->
+    <div id="edu-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-concept-title">
+        <div class="modal-card">
+            <div class="modal-header-badge" id="modal-match-header">
+                <span class="sparkle-icon">✨</span> Par Complementar Conectado!
+                <span class="timer-paused-tag">⏸ Cronômetro Pausado</span>
+            </div>
+
+            <h2 id="modal-concept-title" class="modal-title">Gravidade!</h2>
+
+            <!-- Exibição das duas cartas do par lado a lado -->
+            <div class="modal-cards-comparison">
+                <div class="modal-mini-card modal-mini-card--a">
+                    <div class="mini-card-header">
+                        <span class="mini-type-tag">🔍 Fenômeno (Carta A)</span>
+                    </div>
+                    <div id="modal-card-a-visual" class="mini-card-visual"></div>
+                    <p id="modal-card-a-label" class="mini-card-label"></p>
+                </div>
+
+                <div class="modal-pair-plus">⇄</div>
+
+                <div class="modal-mini-card modal-mini-card--b">
+                    <div class="mini-card-header">
+                        <span id="modal-card-b-tag" class="mini-type-tag">💡 Conceito (Carta B)</span>
+                    </div>
+                    <div id="modal-card-b-visual" class="mini-card-visual"></div>
+                    <p id="modal-card-b-label" class="mini-card-label"></p>
+                </div>
+            </div>
+
+            <!-- Explicação Pedagógica -->
+            <div class="modal-explanation-box">
+                <p id="modal-explanation-text" class="modal-explanation"></p>
+            </div>
+
+            <!-- Bloco de Pergunta-Desafio Bônus (Ocultado automaticamente nos modos "Só Encontrar Pares") -->
+            <div id="modal-challenge-box" class="modal-challenge-box">
+                <div class="challenge-header">
+                    <span class="challenge-badge" id="challenge-badge-title">⚡ Desafio de Laboratório (+150 XP &amp; Bônus)</span>
+                </div>
+                <p id="challenge-question" class="challenge-question"></p>
+                <div id="challenge-options" class="challenge-options"></div>
+                <p id="challenge-feedback" class="challenge-feedback hidden"></p>
+            </div>
+
+            <button type="button" id="btn-continue-game" class="btn-continue">
+                Continuar Jogando ▶
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Final de Vitória / Resultado do Duelo -->
+    <div id="victory-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="victory-title">
+        <div class="modal-card victory-card">
+            <div class="victory-avatar-wrap">
+                <div id="victory-avatar-box" class="victory-avatar"></div>
+                <div id="victory-trophy" class="victory-trophy">🏆</div>
+            </div>
+            <h2 id="victory-title" class="modal-title">Parabéns, Cientista!</h2>
+            <p id="victory-message" class="victory-text"></p>
+
+            <!-- Comparativo Final 1v1 ou Estatísticas Solo -->
+            <div class="victory-stats-grid" id="victory-stats-grid"></div>
+
+            <div class="victory-actions">
+                <button type="button" id="btn-play-again" class="btn-continue">Jogar Novamente 🔄</button>
+                <button type="button" id="btn-switch-level" class="btn-secondary">Avançar / Trocar Nível 🎓</button>
+            </div>
+        </div>
+    </div>
+
 </body>
-</html> 
+</html>

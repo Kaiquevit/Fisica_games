@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Three interlocking P - V - T gears/circles -->
+  <circle cx="95" cy="145" r="44" fill="#DBEAFE" stroke="#2563EB" stroke-width="5"/>
+  <text x="95" y="157" text-anchor="middle" fill="#1E3A8A" font-size="34" font-weight="bold">P</text>
+  <circle cx="150" cy="78" r="44" fill="#DCFCE7" stroke="#16A34A" stroke-width="5"/>
+  <text x="150" y="90" text-anchor="middle" fill="#15803D" font-size="34" font-weight="bold">V</text>
+  <circle cx="205" cy="145" r="44" fill="#FFEDD5" stroke="#EA580C" stroke-width="5"/>
+  <text x="205" y="157" text-anchor="middle" fill="#9A3412" font-size="34" font-weight="bold">T</text>
+</svg>

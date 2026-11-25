@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Periscope Tube -->
+  <path d="M90 55 L185 55 L185 245 L225 245 L225 195 L135 195 L135 105 L90 105 Z" fill="#334155" stroke="#0F172A" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Top 45-degree Mirror -->
+  <line x1="138" y1="60" x2="180" y2="102" stroke="#38BDF8" stroke-width="7" stroke-linecap="round"/>
+  <!-- Bottom 45-degree Mirror -->
+  <line x1="140" y1="198" x2="182" y2="240" stroke="#38BDF8" stroke-width="7" stroke-linecap="round"/>
+  <!-- Light Ray bouncing off both mirrors -->
+  <polyline points="45,80 160,80 160,220 255,220" fill="none" stroke="#FACC15" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="262,220 248,212 248,228" fill="#FACC15"/>
+</svg>

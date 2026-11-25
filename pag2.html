@@ -1,50 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/login2.css">
-    <link rel="stylesheet" href="./css/menus.css">
-    <script defer src="./js/login2.js"></script>
-    <title>Memory Game | login</title>
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script defer src="./js/menu.js"></script>
+    <script defer src="./js/avatar.js"></script>
+    <script defer src="./js/login.js"></script>
+    <title>FísicaPlay | Ensino Médio (13-17 anos)</title>
 </head>
 
 <body>
-
     <header id="header">
-
         <div class="container">
-
             <div class="flex">
-
-                <!-- <a href="index.html"><img src="./images/brain.png.png" alt="celebro"></a> -->
-
+                <a href="index.html" class="brand-logo">⚛️ Física<span>Play</span></a>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="./page1.html">One piece</a></li>
-                        <li><a href="./pag2.html">Cartoons</a></li>
-                        <li><a href="./pag3.html">DigiPoke</a></li>
-                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="index.html">Início / Jogar</a></li>
+                        <li><a href="./page1.html">Fundamental (10-12)</a></li>
+                        <li><a href="./pag2.html" class="active">Médio (13-17)</a></li>
+                        <li><a href="./pag3.html">Física 1 (Faculdade)</a></li>
+                        <li><a href="sobre.html">Guia Pedagógico</a></li>
                     </ul>
                 </nav>
-
             </div>
         </div>
     </header>
 
-    <form class="login-form">
-        <div class="login__hearder">
-            <img src="./images/iconJake.png" alt="jake icon">
-            <h1>Jogo da Memoria</h1>
-            <h2>de Cartoons</h2>
-        </div>
-        <input type="text" placeholder="Name" class="login__input">
-        <button type="submit" class="login__button">Play</button>
-    </form>
-   
+    <main class="home-main">
+        <form class="login-form" data-default-level="medio">
+            <div class="login__hearder">
+                <img src="./images/fisica/med_4a_foguete_decolando.svg" alt="Foguete Decolando">
+                <span class="badge-pill">Nível 2 • Ensino Médio</span>
+                <h1>Fenômenos &amp; Equações</h1>
+                <h2>Conecte cenários práticos às grandezas físicas e resolva desafios aplicados!</h2>
+            </div>
+
+            <div class="form-group">
+                <span class="form-label">🧑‍🔬 1. Monte seu Avatar de Cientista:</span>
+                <div id="avatar-creator-mount"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="player-name" class="form-label">🏷️ 2. Seu Nome:</label>
+                <input id="player-name" type="text" placeholder="Digite seu nome (mín. 2 letras)..." class="login__input" autocomplete="off" required>
+            </div>
+
+            <div class="form-group">
+                <span class="form-label">📚 3. Nível Selecionado:</span>
+                <div class="level-selector">
+                    <label class="level-option">
+                        <input type="radio" name="level" value="fundamental">
+                        <div class="level-card">
+                            <div class="level-card-header"><span class="level-icon">🔭</span><span class="level-age">10–12 anos</span></div>
+                            <div class="level-title">Fundamental</div>
+                            <p class="level-desc">Visual e cotidiano (6 pares / 12 cartas).</p>
+                        </div>
+                    </label>
+                    <label class="level-option">
+                        <input type="radio" name="level" value="medio" checked>
+                        <div class="level-card">
+                            <div class="level-card-header"><span class="level-icon">⚛️</span><span class="level-age">13–17 anos</span></div>
+                            <div class="level-title">Ensino Médio</div>
+                            <p class="level-desc">Grandezas físicas e equações clássicas (6 pares / 12 cartas).</p>
+                        </div>
+                    </label>
+                    <label class="level-option">
+                        <input type="radio" name="level" value="faculdade">
+                        <div class="level-card">
+                            <div class="level-card-header"><span class="level-icon">🎓</span><span class="level-age">Superior</span></div>
+                            <div class="level-title">Física 1 (Faculdade)</div>
+                            <p class="level-desc">Mecânica Universitária com Cálculo e Vetores (8 pares / 16 cartas).</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="form-label">🎮 4. Modo de Jogo:</span>
+                <div class="mode-selector">
+                    <label class="level-option">
+                        <input type="radio" name="gameMode" value="exploracao">
+                        <div class="level-card">
+                            <div class="level-card-header"><span class="level-icon">📘</span><span class="level-age">Livre</span></div>
+                            <div class="level-title">Exploração</div>
+                            <p class="level-desc">Estudo livre no seu ritmo.</p>
+                        </div>
+                    </label>
+                    <label class="level-option">
+                        <input type="radio" name="gameMode" value="desafio" checked>
+                        <div class="level-card">
+                            <div class="level-card-header"><span class="level-icon">🔥</span><span class="level-age">+XP &amp; Quiz</span></div>
+                            <div class="level-title">Desafio Quiz</div>
+                            <p class="level-desc">Contra o tempo com perguntas-desafio bônus!</p>
+                        </div>
+                    </label>
+                    <label class="level-option">
+                        <input type="radio" name="gameMode" value="sobrevivencia">
+                        <div class="level-card">
+                            <div class="level-card-header"><span class="level-icon">⚡</span><span class="level-age">Hardcore</span></div>
+                            <div class="level-title">Sobrevivência</div>
+                            <p class="level-desc">Radar de 3s e 5 Vidas (❤️)!</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="login__button" disabled>Jogar Nível Ensino Médio ⚛️</button>
+        </form>
+    </main>
 </body>
 
 </html>

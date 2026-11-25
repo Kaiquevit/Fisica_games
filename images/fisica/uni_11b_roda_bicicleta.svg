@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Two visual icons: Translation + Rotation = Rolling -->
+  <!-- Translation block/wheel on left -->
+  <circle cx="75" cy="120" r="36" fill="#DBEAFE" stroke="#2563EB" stroke-width="5"/>
+  <path d="M55 120 L95 120 M85 110 L97 120 L85 130" stroke="#2563EB" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Plus sign -->
+  <text x="150" y="132" text-anchor="middle" fill="#475569" font-size="38" font-weight="bold">+</text>
+  <!-- Spinning wheel on right -->
+  <circle cx="225" cy="120" r="36" fill="#FFEDD5" stroke="#EA580C" stroke-width="5"/>
+  <path d="M205 102 A24 24 0 1 1 205 138" fill="none" stroke="#EA580C" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="202,144 198,130 212,135" fill="#EA580C"/>
+</svg>

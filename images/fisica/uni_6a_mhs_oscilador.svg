@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Wall and frictionless floor -->
+  <line x1="35" y1="75" x2="35" y2="215" stroke="#334155" stroke-width="8" stroke-linecap="round"/>
+  <line x1="35" y1="215" x2="275" y2="215" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+  <!-- Equilibrium x=0 dashed line -->
+  <line x1="145" y1="75" x2="145" y2="245" stroke="#94A3B8" stroke-width="3" stroke-dasharray="6,6"/>
+  <!-- Coiled Spring -->
+  <polyline points="38,175 58,175 68,145 84,205 100,145 116,205 132,145 148,205 164,145 178,175 195,175" fill="none" stroke="#475569" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Mass Block m displaced to right -->
+  <rect x="195" y="135" width="66" height="77" rx="8" fill="#2563EB" stroke="#1E3A8A" stroke-width="4"/>
+  <!-- Restoring Hooke Force F = -kx pointing left (Red) -->
+  <path d="M 190 110 L 115 110 M 130 98 L 112 110 L 130 122" stroke="#DC2626" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Displacement x vector pointing right (Green) -->
+  <path d="M 145 238 L 225 238 M 212 228 L 227 238 L 212 248" stroke="#16A34A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

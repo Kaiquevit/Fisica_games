@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Rough Asphalt Ground -->
+  <rect x="20" y="215" width="260" height="35" rx="6" fill="#475569"/>
+  <!-- Grip teeth on ground -->
+  <polyline points="35,215 50,205 65,215 80,205 95,215 110,205 125,215 140,205 155,215 170,205 185,215 200,205 215,215 230,205 245,215" fill="none" stroke="#334155" stroke-width="4"/>
+  <!-- Sneaker with deep rubber tread -->
+  <path d="M70 110 L135 110 L165 155 L235 170 Q250 175 245 200 L65 200 Z" fill="#EF4444" stroke="#991B1B" stroke-width="4" stroke-linejoin="round"/>
+  <!-- White rubber sole with zigzag grip -->
+  <polygon points="65,200 245,200 245,214 225,206 205,214 185,206 165,214 145,206 125,214 105,206 85,214 65,206" fill="#F8FAFC" stroke="#1E293B" stroke-width="3"/>
+  <!-- Friction Force Arrow opposing motion -->
+  <path d="M230 233 L120 233 M135 223 L118 233 L135 243" stroke="#FACC15" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

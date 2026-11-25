@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Glass of water where a pencil looks bent due to refraction -->
+  <rect x="80" y="55" width="140" height="155" rx="10" fill="#E0F2FE" stroke="#0284C7" stroke-width="5"/>
+  <rect x="83" y="125" width="134" height="82" rx="6" fill="#7DD3FC"/>
+  <!-- Upper part of pencil in air -->
+  <line x1="115" y1="35" x2="148" y2="125" stroke="#F59E0B" stroke-width="14" stroke-linecap="round"/>
+  <!-- Lower part of pencil shifted/bent in water -->
+  <line x1="162" y1="125" x2="188" y2="195" stroke="#EA580C" stroke-width="14" stroke-linecap="round"/>
+</svg>

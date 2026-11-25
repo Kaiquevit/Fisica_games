@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Sea Water -->
+  <path d="M20 185 Q85 170 150 185 T280 185 L280 275 L20 275 Z" fill="#38BDF8"/>
+  <!-- Sailboat Hull floating on water -->
+  <polygon points="65,165 235,165 205,205 95,205" fill="#B45309" stroke="#78350F" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Mast and Sails -->
+  <line x1="150" y1="55" x2="150" y2="165" stroke="#78350F" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="154,60 225,152 154,152" fill="#EF4444"/>
+  <polygon points="146,72 85,152 146,152" fill="#FACC15"/>
+  <!-- Upward Buoyancy (Empuxo) Arrows in water -->
+  <path d="M120 255 L120 212 M110 224 L120 210 L130 224" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M180 255 L180 212 M170 224 L180 210 L190 224" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

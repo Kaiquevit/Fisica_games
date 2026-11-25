@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Axes for Potential Energy U(x) -->
+  <line x1="40" y1="245" x2="270" y2="245" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+  <line x1="40" y1="245" x2="40" y2="35" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+  <!-- Potential Energy Well U(x) Parabola -->
+  <path d="M 60 65 Q 155 295 250 65" fill="none" stroke="#2563EB" stroke-width="7" stroke-linecap="round"/>
+  <!-- Tangent derivative line dU/dx at x -->
+  <line x1="165" y1="205" x2="255" y2="95" stroke="#F97316" stroke-width="4" stroke-dasharray="6,5"/>
+  <!-- Particle on right slope of potential well -->
+  <circle cx="212" cy="148" r="13" fill="#EF4444" stroke="#FFFFFF" stroke-width="3"/>
+  <!-- Force vector F = -dU/dx pushing particle toward minimum -->
+  <path d="M 205 148 L 145 148 M 158 138 L 142 148 L 158 158" stroke="#16A34A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

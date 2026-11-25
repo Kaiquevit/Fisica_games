@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Sky backdrop -->
+  <circle cx="150" cy="150" r="120" fill="#E0F2FE"/>
+  <!-- Rainbow arc in background -->
+  <path d="M55 215 A100 100 0 0 1 245 215" fill="none" stroke="#EF4444" stroke-width="8"/>
+  <path d="M63 215 A92 92 0 0 1 237 215" fill="none" stroke="#F97316" stroke-width="8"/>
+  <path d="M71 215 A84 84 0 0 1 229 215" fill="none" stroke="#FACC15" stroke-width="8"/>
+  <path d="M79 215 A76 76 0 0 1 221 215" fill="none" stroke="#22C55E" stroke-width="8"/>
+  <path d="M87 215 A68 68 0 0 1 213 215" fill="none" stroke="#3B82F6" stroke-width="8"/>
+  <path d="M95 215 A60 60 0 0 1 205 215" fill="none" stroke="#A855F7" stroke-width="8"/>
+  <!-- Bright Sun on top-left -->
+  <circle cx="88" cy="88" r="32" fill="#FACC15" stroke="#F59E0B" stroke-width="4"/>
+  <!-- Sun rays hitting the raindrop -->
+  <line x1="122" y1="108" x2="165" y2="138" stroke="#FEF08A" stroke-width="6" stroke-linecap="round"/>
+  <!-- Giant Raindrop on right -->
+  <path d="M195 100 Q245 165 245 195 A50 50 0 1 1 145 195 Q145 165 195 100 Z" fill="#38BDF8" stroke="#0284C7" stroke-width="4"/>
+  <!-- Glossy highlight on raindrop -->
+  <path d="M168 175 Q165 198 178 212" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+</svg>

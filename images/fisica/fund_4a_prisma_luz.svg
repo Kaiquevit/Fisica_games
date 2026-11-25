@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Dark backdrop circle to make white light and rainbow pop -->
+  <circle cx="150" cy="150" r="122" fill="#1E293B"/>
+  <!-- Incoming white light beam -->
+  <line x1="35" y1="175" x2="122" y2="148" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <!-- Rainbow beams exiting the prism -->
+  <polygon points="168,132 268,95 268,110 172,140" fill="#EF4444"/>
+  <polygon points="172,140 268,110 268,125 175,148" fill="#F97316"/>
+  <polygon points="175,148 268,125 268,140 178,156" fill="#FACC15"/>
+  <polygon points="178,156 268,140 268,155 181,164" fill="#22C55E"/>
+  <polygon points="181,164 268,155 268,170 184,172" fill="#3B82F6"/>
+  <polygon points="184,172 268,170 268,186 187,180" fill="#A855F7"/>
+  <!-- Glass Prism Triangle -->
+  <polygon points="150,75 95,205 205,205" fill="#E0F2FE" fill-opacity="0.35" stroke="#7DD3FC" stroke-width="5" stroke-linejoin="round"/>
+  <!-- Internal refraction beam inside prism -->
+  <polygon points="120,148 170,134 185,175" fill="#FFFFFF" fill-opacity="0.5"/>
+</svg>

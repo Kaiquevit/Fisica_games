@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Pendulum on Left -->
+  <line x1="60" y1="35" x2="115" y2="35" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+  <line x1="88" y1="35" x2="118" y2="145" stroke="#475569" stroke-width="4"/>
+  <circle cx="118" cy="145" r="20" fill="#EA580C" stroke="#9A3412" stroke-width="4"/>
+  <path d="M55 155 Q88 178 122 155" fill="none" stroke="#16A34A" stroke-width="4" stroke-dasharray="5,5"/>
+  <!-- Cosine wave x(t) on Right -->
+  <path d="M155 120 C172 55, 195 55, 210 120 C225 185, 248 185, 265 120" fill="none" stroke="#2563EB" stroke-width="6" stroke-linecap="round"/>
+</svg>

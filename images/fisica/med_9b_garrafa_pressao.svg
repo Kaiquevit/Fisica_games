@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Water tower column with 3 holes showing Stevin pressure increasing with depth -->
+  <rect x="65" y="35" width="85" height="175" rx="8" fill="#0284C7" stroke="#1E3A8A" stroke-width="5"/>
+  <!-- Top hole: weak jet -->
+  <path d="M150 80 Q175 85 182 210" fill="none" stroke="#38BDF8" stroke-width="6" stroke-linecap="round"/>
+  <!-- Middle hole: medium jet -->
+  <path d="M150 130 Q198 135 215 210" fill="none" stroke="#0284C7" stroke-width="7" stroke-linecap="round"/>
+  <!-- Bottom hole: strong far jet (highest pressure) -->
+  <path d="M150 180 Q230 182 260 210" fill="none" stroke="#1D4ED8" stroke-width="8" stroke-linecap="round"/>
+</svg>

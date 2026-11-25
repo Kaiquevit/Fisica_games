@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Top View of Disk showing axis at CM and shifted axis at distance d -->
+  <circle cx="150" cy="120" r="82" fill="#DBEAFE" stroke="#2563EB" stroke-width="6"/>
+  <!-- CM point -->
+  <circle cx="150" cy="120" r="10" fill="#2563EB"/>
+  <!-- Shifted axis point P -->
+  <circle cx="212" cy="120" r="10" fill="#EA580C"/>
+  <!-- Distance d line -->
+  <line x1="150" y1="120" x2="212" y2="120" stroke="#16A34A" stroke-width="6"/>
+  <text x="181" y="106" text-anchor="middle" fill="#15803D" font-size="26" font-weight="bold">d</text>
+  <text x="150" y="152" text-anchor="middle" fill="#1E3A8A" font-size="20" font-weight="bold">CM</text>
+</svg>

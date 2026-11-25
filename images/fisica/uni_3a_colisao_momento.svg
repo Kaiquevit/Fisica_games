@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Impact starburst in center -->
+  <polygon points="150,115 160,138 185,130 168,150 185,170 160,162 150,185 140,162 115,170 132,150 115,130 140,138" fill="#FACC15" stroke="#F97316" stroke-width="3"/>
+  <!-- Sphere 1 (Blue, left) -->
+  <circle cx="95" cy="150" r="36" fill="#2563EB" stroke="#1E3A8A" stroke-width="4"/>
+  <circle cx="83" cy="138" r="8" fill="#93C5FD"/>
+  <!-- Sphere 2 (Red, right) -->
+  <circle cx="205" cy="150" r="36" fill="#EF4444" stroke="#991B1B" stroke-width="4"/>
+  <circle cx="193" cy="138" r="8" fill="#FCA5A5"/>
+  <!-- Incoming Momentum Vectors (Top) -->
+  <path d="M 35 80 L 110 80 M 96 70 L 112 80 L 96 90" stroke="#2563EB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 265 80 L 190 80 M 204 70 L 188 80 L 204 90" stroke="#EF4444" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Outgoing Impulse/Momentum Vectors (Bottom) -->
+  <path d="M 110 225 L 35 225 M 49 215 L 33 225 L 49 235" stroke="#16A34A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 190 225 L 265 225 M 251 215 L 267 225 L 251 235" stroke="#16A34A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

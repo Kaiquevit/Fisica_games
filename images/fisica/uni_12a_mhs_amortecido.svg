@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Time and displacement axes -->
+  <line x1="35" y1="150" x2="275" y2="150" stroke="#475569" stroke-width="4"/>
+  <line x1="35" y1="40" x2="35" y2="260" stroke="#475569" stroke-width="4"/>
+  <!-- Exponential Decay Envelope curves +A*e^(-gamma*t) and -A*e^(-gamma*t) -->
+  <path d="M35 50 Q115 125 270 144" fill="none" stroke="#EF4444" stroke-width="4" stroke-dasharray="6,6"/>
+  <path d="M35 250 Q115 175 270 156" fill="none" stroke="#EF4444" stroke-width="4" stroke-dasharray="6,6"/>
+  <!-- Damped Cosine Wave inside envelope -->
+  <path d="M35 55 C55 55, 65 232, 85 232 C105 232, 115 88, 135 88 C155 88, 165 198, 185 198 C205 198, 215 120, 235 120 C250 120, 258 166, 270 155" fill="none" stroke="#2563EB" stroke-width="6" stroke-linecap="round"/>
+</svg>

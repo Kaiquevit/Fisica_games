@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Electric spark bolt between two electrodes at distance d -->
+  <circle cx="65" cy="115" r="24" fill="#EF4444"/>
+  <circle cx="235" cy="115" r="24" fill="#2563EB"/>
+  <polyline points="90,115 118,92 140,132 165,88 185,128 210,115" fill="none" stroke="#FACC15" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Distance d arrow at bottom -->
+  <path d="M65 175 L235 175 M80 165 L63 175 L80 185 M220 165 L237 175 L220 185" stroke="#475569" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <text x="150" y="210" text-anchor="middle" fill="#1E293B" font-size="26" font-weight="bold">d²</text>
+</svg>

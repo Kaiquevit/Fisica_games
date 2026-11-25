@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Rotation direction arc -->
+  <path d="M 95 95 A 65 65 0 0 1 180 85" fill="none" stroke="#16A34A" stroke-width="5" stroke-dasharray="6,6" stroke-linecap="round"/>
+  <polygon points="90,102 92,86 104,96" fill="#16A34A"/>
+  <!-- Pivot Nut/Bolt on left -->
+  <polygon points="75,155 90,180 75,205 45,205 30,180 45,155" fill="#64748B" stroke="#334155" stroke-width="4"/>
+  <circle cx="60" cy="180" r="10" fill="#F97316"/>
+  <!-- Rigid Lever Arm / Wrench Bar -->
+  <rect x="60" y="170" width="175" height="20" rx="8" fill="#94A3B8" stroke="#475569" stroke-width="4"/>
+  <!-- Radius Vector r (Blue arrow along bar) -->
+  <path d="M 65 180 L 222 180 M 210 172 L 224 180 L 210 188" stroke="#2563EB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Applied Force Vector F at angle theta (Red arrow pointing up-right) -->
+  <path d="M 225 180 L 260 65 M 246 76 L 261 63 L 266 82" stroke="#DC2626" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Angle arc theta -->
+  <path d="M 200 180 A 28 28 0 0 1 233 153" fill="none" stroke="#F59E0B" stroke-width="4"/>
+</svg>

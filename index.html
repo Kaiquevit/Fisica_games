@@ -1,42 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/login.css">
     <script defer src="./js/menu.js"></script>
-
-    <title>Jogo</title>
+    <script defer src="./js/avatar.js"></script>
+    <script defer src="./js/login.js"></script>
+    <title>FísicaPlay | Projeto OPET de Física - Kaique Vitor</title>
 </head>
 
 <body>
     <header id="header">
-
         <div class="container">
-
             <div class="flex">
-
-                <!-- <a href="index.html"><img src="./images/brain.png.png" alt="celebro"></a> -->
-
+                <a href="index.html" class="brand-logo">⚛️ Física<span>Play</span></a>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="./page1.html">One piece</a></li>
-                        <li><a href="./pag2.html">Cartoons</a></li>
-                        <li><a href="./pag3.html">DigiPoke</a></li>
-                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="index.html" class="active">Início / Jogar</a></li>
+                        <li><a href="./page1.html">Fundamental (10-12)</a></li>
+                        <li><a href="./pag2.html">Médio (13-17)</a></li>
+                        <li><a href="./pag3.html">Física 1 (Faculdade)</a></li>
+                        <li><a href="sobre.html">Sobre o Projeto (OPET)</a></li>
                     </ul>
                 </nav>
-
             </div>
         </div>
     </header>
-    <section class="banner">
-        <h1>BORA <span> RELAXAR</span></h1>
-        
-    </section>
+
+    <main class="home-main">
+        <form class="login-form">
+            <!-- Banner Institucional do Projeto OPET de Física - Aluno Kaique Vitor -->
+            <div class="project-credit-banner">
+                <span class="project-credit-tag">🎓 Projeto Acadêmico • OPET de Física</span>
+                <p class="project-credit-title">
+                    Desenvolvido para a <strong>OPET de Física</strong> pelo aluno <strong>Kaique Vitor</strong>
+                </p>
+                <p class="project-credit-desc">
+                    Ferramenta educativa gamificada baseada na associação de <strong>Pares Complementares de Física</strong>, com tabuleiros de <strong>24 cartas (12 pares)</strong>, níveis <strong>Médio (Desenhos + Fórmulas Pela Metade)</strong> e <strong>Difícil (Equações Completas)</strong>, modos <strong>Só Encontrar os Pares</strong> ou <strong>Com Quiz</strong>, e <strong>Duelo de 2 Jogadores (1v1)</strong>.
+                </p>
+            </div>
+
+            <div class="login__hearder">
+                <span class="badge-pill">24 Cartas por Tabuleiro • Solo &amp; Duelo 2 Jogadores</span>
+                <h1>FísicaPlay: Memória &amp; Associação</h1>
+                <h2>Monte seu Avatar de Cientista, escolha o nível e a dificuldade (<strong>Médio com Desenhos</strong> ou <strong>Difícil com Fórmulas</strong>) e comece!</h2>
+            </div>
+
+            <!-- 1. Criador de Avatar de Cientista -->
+            <div class="form-group">
+                <span class="form-label">🧑‍🔬 1. Monte o Avatar dos Cientistas (Jogador 1 e Jogador 2):</span>
+                <div id="avatar-creator-mount"></div>
+            </div>
+
+            <!-- 2. Seletor de Modo de Jogo -->
+            <div class="form-group">
+                <span class="form-label">🎮 2. Escolha o Modo de Jogo (Só Encontrar Pares ou Com Quiz):</span>
+                <div class="mode-selector">
+                    <label class="level-option">
+                        <input type="radio" name="gameMode" value="duelo_pares" checked>
+                        <div class="level-card">
+                            <div class="level-card-header">
+                                <span class="level-icon">⚔️</span>
+                                <span class="level-age">2 Jogadores • Só Pares</span>
+                            </div>
+                            <div class="level-title">Duelo 1v1 (Só Pares)</div>
+                            <p class="level-desc">Disputa direta de memória (30s por turno) sem perguntas de quiz! Errou ou o tempo acabou, passa a vez. Quem achar mais pares vence!</p>
+                        </div>
+                    </label>
+
+                    <label class="level-option">
+                        <input type="radio" name="gameMode" value="duelo">
+                        <div class="level-card">
+                            <div class="level-card-header">
+                                <span class="level-icon">🧠</span>
+                                <span class="level-age">2 Jogadores • +Quiz</span>
+                            </div>
+                            <div class="level-title">Duelo 1v1 + Quiz</div>
+                            <p class="level-desc">Turnos de 30s com Pergunta-Desafio de Física ao acertar cada par para somar +150 XP de desempate!</p>
+                        </div>
+                    </label>
+
+                    <label class="level-option">
+                        <input type="radio" name="gameMode" value="solo_pares">
+                        <div class="level-card">
+                            <div class="level-card-header">
+                                <span class="level-icon">🧩</span>
+                                <span class="level-age">1 Jogador • Só Pares</span>
+                            </div>
+                            <div class="level-title">Solo: Só Encontrar Pares</div>
+                            <p class="level-desc">Foco 100% em encontrar os 12 pares complementares (24 cartas) com explicação visual direta e sem quiz!</p>
+                        </div>
+                    </label>
+
+                    <label class="level-option">
+                        <input type="radio" name="gameMode" value="desafio">
+                        <div class="level-card">
+                            <div class="level-card-header">
+                                <span class="level-icon">🔥</span>
+                                <span class="level-age">1 Jogador • +Quiz</span>
+                            </div>
+                            <div class="level-title">Solo: Desafio com Quiz</div>
+                            <p class="level-desc">Contra o relógio! Cada par abre uma Pergunta-Desafio que dá +150 XP, Combo e +12s extras!</p>
+                        </div>
+                    </label>
+
+                    <label class="level-option">
+                        <input type="radio" name="gameMode" value="sobrevivencia">
+                        <div class="level-card">
+                            <div class="level-card-header">
+                                <span class="level-icon">⚡</span>
+                                <span class="level-age">1 Jogador • 5 Vidas</span>
+                            </div>
+                            <div class="level-title">Solo: Sobrevivência</div>
+                            <p class="level-desc">Radar inicial de 3s e Vidas (❤️) que diminuem ao errar e recuperam ao acertar o Quiz!</p>
+                        </div>
+                    </label>
+
+                    <label class="level-option">
+                        <input type="radio" name="gameMode" value="exploracao">
+                        <div class="level-card">
+                            <div class="level-card-header">
+                                <span class="level-icon">📘</span>
+                                <span class="level-age">1 Jogador • Livre</span>
+                            </div>
+                            <div class="level-title">Solo: Estudo Livre + Quiz</div>
+                            <p class="level-desc">Sem pressão de tempo ou limite de vidas, ideal para revisar a matéria e treinar os quizzes.</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 3. Nomes dos Jogadores (Jogador 1 e Jogador 2) -->
+            <div class="form-group">
+                <div class="players-names-grid two-players" id="players-names-grid">
+                    <div>
+                        <label for="player-name" class="form-label">🏷️ Nome do Jogador 1 (Azul):</label>
+                        <input
+                            id="player-name"
+                            type="text"
+                            placeholder="Digite o nome do Jogador 1..."
+                            class="login__input"
+                            autocomplete="off"
+                            required
+                        >
+                    </div>
+                    <div class="p2-input-wrap" id="p2-input-wrap">
+                        <label for="player2-name" class="form-label">⚔️ Nome do Jogador 2 (Laranja):</label>
+                        <input
+                            id="player2-name"
+                            type="text"
+                            placeholder="Digite o nome do Jogador 2..."
+                            class="login__input"
+                            autocomplete="off"
+                            value="Cientista 2"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Seletor de Nível e Dificuldade (Médio Visual vs Difícil Fórmulas) -->
+            <div class="form-group">
+                <span class="form-label">📚 4. Escolha o Nível e a Dificuldade (24 Cartas / 12 Pares):</span>
+                <div class="level-selector">
+                    <!-- Nível 1: Fundamental (Mantido como está) -->
+                    <label class="level-option">
+                        <input type="radio" name="level" value="fundamental" checked>
+                        <div class="level-card">
+                            <div class="level-card-header">
+                                <span class="level-icon">🔭</span>
+                                <span class="level-age">10–12 anos • Visual</span>
+                            </div>
+                            <div class="level-title">Fundamental (10-12)</div>
+                            <p class="level-desc">100% Visual e cotidiano (24 cartas): Gravidade, Matéria, Ímãs, Arco-Íris, Alavancas, Circuito, Som, Atrito e mais!</p>
+                        </div>
+                    </label>
+
+                    <!-- Nível 2A: Ensino Médio (13-17) - Nível Médio (Desenhos + Fórmulas Pela Metade) -->
+                    <label class="level-option">
+                        <input type="radio" name="level" value="medio">
+                        <div class="level-card">
+                            <div class="level-card-header">
+                                <span class="level-icon">🎨</span>
+                                <span class="level-age">13–17 • Nível Médio</span>
+                            </div>
+                            <div class="level-title">Médio 13-17 (Visual + Dicas)</div>
+                            <p class="level-desc">Mais intuitivo! As cartas têm <strong>desenhos físicos explicativos + fórmulas pela metade</strong> (ex: <code>F = m · [ a ]</code>)!</p>
+                        </div>
+                    </label>
+
+                    <!-- Nível 2B: Ensino Médio (13-17) - Nível Difícil (Fórmulas Puras) -->
+                    <label class="level-option">
+                        <input type="radio" name="level" value="medio_dificil">
+                        <div class="level-card">
+                            <div class="level-card-header">
+                                <span class="level-icon">⚛️</span>
+                                <span class="level-age">13–17 • Nível Difícil</span>
+                            </div>
+                            <div class="level-title">Médio 13-17 (Só Fórmulas)</div>
+                            <p class="level-desc">Desafio avançado: conecte o desenho do fenômeno diretamente à equação matemática completa!</p>
+                        </div>
+                    </label>
+
+                    <!-- Nível 3A: Física 1 (Faculdade) - Nível Médio (Desenhos + Fórmulas Pela Metade) -->
+                    <label class="level-option">
+                        <input type="radio" name="level" value="faculdade">
+                        <div class="level-card">
+                            <div class="level-card-header">
+                                <span class="level-icon">🛠️</span>
+                                <span class="level-age">Faculdade • Nível Médio</span>
+                            </div>
+                            <div class="level-title">Física 1 (Visual + Guiado)</div>
+                            <p class="level-desc">Física 1 acessível! <strong>Desenhos práticos (patinador, chave inglesa, amortecedor) + fórmulas pela metade</strong>!</p>
+                        </div>
+                    </label>
+
+                    <!-- Nível 3B: Física 1 (Faculdade) - Nível Difícil (Cálculo & Equações) -->
+                    <label class="level-option">
+                        <input type="radio" name="level" value="faculdade_dificil">
+                        <div class="level-card">
+                            <div class="level-card-header">
+                                <span class="level-icon">🎓</span>
+                                <span class="level-age">Faculdade • Nível Difícil</span>
+                            </div>
+                            <div class="level-title">Física 1 (Cálculo Puro)</div>
+                            <p class="level-desc">Hardcore universitário: Derivadas Vetoriais, Integrais de Linha, Produto Vetorial, Gradiente e EDOs!</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Dica Visual de Jogabilidade (UX) -->
+            <div class="ux-legend-preview">
+                <div class="ux-pill ux-pill--a">
+                    <span class="ux-pill-icon">🔍</span>
+                    <div>
+                        <strong>Carta Tipo A (Borda Azul)</strong>
+                        Situação, Diagrama ou Fenômeno
+                    </div>
+                </div>
+                <div class="ux-pill ux-pill--b">
+                    <span class="ux-pill-icon">💡</span>
+                    <div>
+                        <strong>Carta Tipo B (Borda Laranja)</strong>
+                        Desenho do Conceito + Fórmula Pela Metade ⚛️
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="login__button" disabled>Entrar no Laboratório &amp; Jogar (24 Cartas) 🚀</button>
+
+            <p class="project-footer-note">
+                Projeto desenvolvido para a <strong>OPET de Física</strong> • Aluno: <strong>Kaique Vitor</strong>
+            </p>
+        </form>
+    </main>
 </body>
 
 </html>

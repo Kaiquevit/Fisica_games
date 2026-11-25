@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Ground -->
+  <line x1="30" y1="240" x2="270" y2="240" stroke="#94A3B8" stroke-width="6" stroke-linecap="round"/>
+  <!-- Fulcrum triangle (placed closer to heavy rock for mechanical advantage) -->
+  <polygon points="115,195 88,240 142,240" fill="#F97316" stroke="#C2410C" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Tilted wooden lever plank -->
+  <g transform="rotate(14 115 195)">
+    <rect x="35" y="183" width="225" height="14" rx="5" fill="#B45309" stroke="#78350F" stroke-width="3"/>
+    <!-- Heavy Rock on short side (left) -->
+    <path d="M40 183 L32 140 L55 118 L88 125 L98 183 Z" fill="#64748B" stroke="#334155" stroke-width="4" stroke-linejoin="round"/>
+    <!-- Upward arrow above rock -->
+    <path d="M65 102 L65 72 M53 84 L65 70 L77 84" stroke="#22C55E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <!-- Child pushing down easily on the long side (right) -->
+  <circle cx="235" cy="128" r="16" fill="#FDBA74"/>
+  <path d="M235 144 L235 188" stroke="#2563EB" stroke-width="14" stroke-linecap="round"/>
+  <path d="M235 158 L208 180" stroke="#FDBA74" stroke-width="8" stroke-linecap="round"/>
+  <!-- Downward force arrow on right -->
+  <path d="M205 125 L205 162 M195 150 L205 164 L215 150" stroke="#3B82F6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

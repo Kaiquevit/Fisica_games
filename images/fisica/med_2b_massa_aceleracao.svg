@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Iron Weight Mass m -->
+  <polygon points="95,85 165,85 180,185 80,185" fill="#334155" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="130" cy="68" r="16" fill="none" stroke="#334155" stroke-width="8"/>
+  <text x="130" y="150" text-anchor="middle" fill="#F8FAFC" font-size="34" font-weight="bold">m</text>
+  <!-- Big Force & Acceleration Arrows pushing mass -->
+  <path d="M20 135 L72 135 M58 123 L74 135 L58 147" stroke="#16A34A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M190 135 L270 135 M252 120 L272 135 L252 150" stroke="#EF4444" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

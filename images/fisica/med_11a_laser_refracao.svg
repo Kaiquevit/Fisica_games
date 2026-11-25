@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Bottom medium n2 (Water/Glass) -->
+  <rect x="25" y="150" width="250" height="125" rx="12" fill="#BAE6FD"/>
+  <!-- Interface horizontal line -->
+  <line x1="25" y1="150" x2="275" y2="150" stroke="#0284C7" stroke-width="4"/>
+  <!-- Normal vertical dashed line -->
+  <line x1="150" y1="35" x2="150" y2="265" stroke="#475569" stroke-width="4" stroke-dasharray="7,7"/>
+  <!-- Angle arcs theta1 and theta2 -->
+  <path d="M150 95 A55 55 0 0 0 106 116" fill="none" stroke="#F59E0B" stroke-width="4"/>
+  <path d="M150 205 A55 55 0 0 0 175 198" fill="none" stroke="#16A34A" stroke-width="4"/>
+  <!-- Incident Laser Ray in air (theta1) -->
+  <line x1="65" y1="65" x2="150" y2="150" stroke="#EF4444" stroke-width="7" stroke-linecap="round"/>
+  <!-- Refracted Laser Ray bending closer to normal in water (theta2) -->
+  <line x1="150" y1="150" x2="195" y2="255" stroke="#EF4444" stroke-width="7" stroke-linecap="round"/>
+</svg>

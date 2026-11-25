@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <!-- Clean off-white background -->
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Outer space orbit circle -->
+  <circle cx="150" cy="150" r="120" fill="#0F172A"/>
+  <!-- Stars -->
+  <circle cx="65" cy="70" r="2.5" fill="#FDE047"/>
+  <circle cx="230" cy="65" r="2" fill="#FEF08A"/>
+  <circle cx="245" cy="210" r="2.5" fill="#FDE047"/>
+  <circle cx="60" cy="220" r="2" fill="#FEF08A"/>
+  <!-- Gravitational field dashed rings -->
+  <circle cx="150" cy="150" r="98" fill="none" stroke="#38BDF8" stroke-width="2" stroke-dasharray="7,7" opacity="0.7"/>
+  <circle cx="150" cy="150" r="76" fill="none" stroke="#38BDF8" stroke-width="2" stroke-dasharray="5,5" opacity="0.85"/>
+  <!-- Planet Earth -->
+  <circle cx="150" cy="150" r="52" fill="#2563EB"/>
+  <!-- Continents -->
+  <path d="M125 115 Q145 120 140 140 Q130 158 148 175 Q132 185 115 165 Q105 140 125 115 Z" fill="#22C55E"/>
+  <path d="M168 122 Q190 130 188 155 Q175 178 162 165 Q158 142 168 122 Z" fill="#22C55E"/>
+  <!-- Arrows pointing toward Earth's center from all directions -->
+  <!-- Top arrow -->
+  <path d="M150 42 L150 85 M140 73 L150 86 L160 73" stroke="#F97316" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Bottom arrow -->
+  <path d="M150 258 L150 215 M140 227 L150 214 L160 227" stroke="#F97316" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Left arrow -->
+  <path d="M42 150 L85 150 M73 140 L86 150 L73 160" stroke="#F97316" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Right arrow -->
+  <path d="M258 150 L215 150 M227 140 L214 150 L227 160" stroke="#F97316" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Diagonal arrows -->
+  <path d="M75 75 L103 103 M90 103 L104 104 L103 90" stroke="#FB923C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M225 75 L197 103 M197 90 L196 104 L210 103" stroke="#FB923C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M75 225 L103 197 M103 210 L104 196 L90 197" stroke="#FB923C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M225 225 L197 197 M210 197 L196 196 L197 210" stroke="#FB923C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

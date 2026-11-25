@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Bat / Racket hitting a ball and changing its momentum Delta p -->
+  <rect x="65" y="45" width="24" height="145" rx="12" transform="rotate(-15 77 115)" fill="#B45309" stroke="#78350F" stroke-width="4"/>
+  <!-- Impact flash -->
+  <circle cx="115" cy="115" r="24" fill="#FEF08A"/>
+  <!-- Ball shooting right with high impulse J -->
+  <circle cx="155" cy="115" r="22" fill="#EF4444" stroke="#991B1B" stroke-width="4"/>
+  <path d="M185 115 L268 115 M250 100 L270 115 L250 130" stroke="#16A34A" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <text x="225" y="88" text-anchor="middle" fill="#15803D" font-size="26" font-weight="bold">J = Δp</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Incoming longitudinal sound waves -->
+  <path d="M40 120 Q55 150 40 180" fill="none" stroke="#2563EB" stroke-width="5" stroke-linecap="round"/>
+  <path d="M68 105 Q88 150 68 195" fill="none" stroke="#3B82F6" stroke-width="5" stroke-linecap="round"/>
+  <path d="M96 90 Q120 150 96 210" fill="none" stroke="#60A5FA" stroke-width="5" stroke-linecap="round"/>
+  <path d="M45 150 L125 150 M113 140 L127 150 L113 160" stroke="#F97316" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Stylized Human Ear receiving vibrations -->
+  <path d="M165 80 C215 60, 255 110, 240 165 C230 205, 205 235, 175 230 C155 226, 152 205, 165 195" fill="#FDBA74" stroke="#C2410C" stroke-width="6" stroke-linecap="round"/>
+  <path d="M175 110 C205 100, 220 135, 208 168 C200 185, 182 190, 175 175" fill="none" stroke="#C2410C" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="172" cy="155" r="10" fill="#7C2D12"/>
+</svg>

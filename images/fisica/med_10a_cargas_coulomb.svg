@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Electric field lines between opposite charges -->
+  <path d="M85 135 Q150 75 215 135" fill="none" stroke="#94A3B8" stroke-width="3" stroke-dasharray="6,6"/>
+  <path d="M85 165 Q150 225 215 165" fill="none" stroke="#94A3B8" stroke-width="3" stroke-dasharray="6,6"/>
+  <!-- Distance d bracket at bottom -->
+  <path d="M75 235 L225 235 M75 225 L75 245 M225 225 L225 245" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+  <!-- Positive Charge +q1 (Red) -->
+  <circle cx="75" cy="150" r="34" fill="#EF4444" stroke="#991B1B" stroke-width="4"/>
+  <line x1="63" y1="150" x2="87" y2="150" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+  <line x1="75" y1="138" x2="75" y2="162" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+  <!-- Negative Charge -q2 (Blue) -->
+  <circle cx="225" cy="150" r="34" fill="#2563EB" stroke="#1E3A8A" stroke-width="4"/>
+  <line x1="213" y1="150" x2="237" y2="150" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+  <!-- Mutual Attractive Force Arrows Fe -->
+  <path d="M112 150 L142 150 M132 142 L144 150 L132 158" stroke="#16A34A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M188 150 L158 150 M168 142 L156 150 L168 158" stroke="#16A34A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

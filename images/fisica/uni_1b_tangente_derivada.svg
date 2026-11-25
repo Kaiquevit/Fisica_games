@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Graph of Position x(t) with tangent slope showing derivative v = dx/dt -->
+  <line x1="45" y1="195" x2="265" y2="195" stroke="#475569" stroke-width="4"/>
+  <line x1="45" y1="195" x2="45" y2="35" stroke="#475569" stroke-width="4"/>
+  <path d="M50 185 Q135 160 235 45" fill="none" stroke="#2563EB" stroke-width="6"/>
+  <!-- Tangent slope triangle dx / dt -->
+  <line x1="85" y1="175" x2="225" y2="65" stroke="#16A34A" stroke-width="5"/>
+  <polyline points="115,152 195,152 195,88" fill="none" stroke="#EA580C" stroke-width="4" stroke-dasharray="5,5"/>
+  <circle cx="155" cy="120" r="9" fill="#EF4444"/>
+  <text x="160" y="176" text-anchor="middle" fill="#EA580C" font-size="22" font-weight="bold">dt</text>
+  <text x="218" y="130" text-anchor="middle" fill="#EA580C" font-size="22" font-weight="bold">dr</text>
+</svg>

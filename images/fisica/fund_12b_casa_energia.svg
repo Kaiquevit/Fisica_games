@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Eco House -->
+  <rect x="75" y="140" width="150" height="110" rx="6" fill="#E2E8F0" stroke="#475569" stroke-width="4"/>
+  <polygon points="55,145 150,70 245,145" fill="#16A34A" stroke="#15803D" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Glowing lit windows -->
+  <rect x="98" y="165" width="38" height="38" rx="4" fill="#FACC15" stroke="#B45309" stroke-width="3"/>
+  <rect x="164" y="165" width="38" height="38" rx="4" fill="#FACC15" stroke="#B45309" stroke-width="3"/>
+  <!-- Lightning bolt icon on roof -->
+  <polygon points="155,88 138,115 152,115 145,135 168,108 154,108" fill="#FEF08A"/>
+</svg>

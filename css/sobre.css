@@ -1,110 +1,126 @@
-/* CSS base */
-html {
-    height: 100vh;
-    background-color: black;
+.guide-main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
 }
 
-.container {
-    max-width: 90%;
-    margin: auto;
+.opet-project-card {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.25) 0%, rgba(234, 88, 12, 0.2) 100%);
+  border: 2px solid #38bdf8;
+  border-radius: 22px;
+  padding: 28px 30px;
+  margin-bottom: 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  text-align: left;
 }
 
-.flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.opet-badge {
+  display: inline-block;
+  background: #38bdf8;
+  color: #0f172a;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 12px;
 }
 
-header {
-    width: 100%;
-    padding: 6vh 4%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: 0.5s;
+.opet-project-card h1 {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #f8fafc;
+  margin-bottom: 10px;
 }
 
-header.rolagem1 {
-    background-color: #080424;
-    padding: 2vh 4%;
+.opet-project-card h1 span {
+  color: #facc15;
 }
 
-header.rolagem1 a {
-    color: #5c23d0;
+.opet-author-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 14px 0 18px;
 }
 
-header ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+.opet-meta-pill {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  color: #e2e8f0;
+  font-weight: 700;
 }
 
-header ul li {
-    display: inline-block;
-    margin: 0 20px;
+.opet-meta-pill strong {
+  color: #38bdf8;
 }
 
-header ul li a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    display: block;
+.opet-description {
+  color: #e2e8f0;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-.banner2,
-.banner3 {
-    height: 100vh;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10vh;
-    text-align: center;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.guide-section {
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 28px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
-.banner2 {
-    background-image: url('../images/game boy.png');
+.guide-section h2 {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #38bdf8;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.banner3 {
-    background-image: url('../images/Evanjelion.jpg');
+.guide-section .section-subtitle {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
 }
 
-.banner2 p {
-    padding: 10%;
-    color: #12841d;
+.pairs-table-wrapper {
+  overflow-x: auto;
 }
 
-
-@media screen and (max-width: 768px) {
-    header ul li {
-        margin: 0 10px;
-    }
-
-    header.rolagem1 {
-        padding: 2vh 2%;
-    }
-
-    header ul li a {
-        margin-top: 5vh;
-    }
-
-    .banner2 p {
-        padding: 5%;
-    }
+.pairs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
 }
 
+.pairs-table th,
+.pairs-table td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  vertical-align: middle;
+}
 
-@media screen and (min-width: 1024px) {
- 
-    .banner2 p {
-        font-size: 20px; /* Tamanho da fonte */
-        line-height: 2; /* Espaçamento entre as linhas */
-        letter-spacing: -1.0px; /* Espaçamento entre as letras */
-        max-width: 80%; /* Define a largura máxima */
-    text-align: justify; /* Alinha o texto justificado */
-    }
+.pairs-table th {
+  background: rgba(15, 23, 42, 0.7);
+  color: #e2e8f0;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  letter-spacing: 0.5px;
+}
+
+.th-type-a {
+  color: #60a5fa !important;
+}
+
+.th-type-b {
+  color: #fb923c !important;
 }

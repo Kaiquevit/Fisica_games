@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Shock Absorber (Coil Spring + Hydraulic Damper slowing oscillation) -->
+  <rect x="115" y="30" width="70" height="18" rx="6" fill="#334155"/>
+  <rect x="132" y="48" width="36" height="135" rx="4" fill="#94A3B8" stroke="#475569" stroke-width="3"/>
+  <!-- Red coil spring wrapped around damper -->
+  <polyline points="110,60 190,78 110,96 190,114 110,132 190,150 110,168 190,180" fill="none" stroke="#EF4444" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="115" y="185" width="70" height="18" rx="6" fill="#334155"/>
+</svg>

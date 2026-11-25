@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- U-shaped Potential Bowl with ball resting at stable equilibrium at bottom -->
+  <path d="M45 45 Q150 245 255 45" fill="none" stroke="#2563EB" stroke-width="8" stroke-linecap="round"/>
+  <!-- Horizontal tangent line at bottom (dU/dx = 0) -->
+  <line x1="85" y1="152" x2="215" y2="152" stroke="#16A34A" stroke-width="5" stroke-dasharray="7,5"/>
+  <circle cx="150" cy="132" r="18" fill="#EF4444" stroke="#991B1B" stroke-width="4"/>
+  <text x="150" y="195" text-anchor="middle" fill="#15803D" font-size="24" font-weight="bold">F = 0 (Mínimo)</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Gas Cylinder Chamber -->
+  <rect x="75" y="85" width="130" height="165" rx="8" fill="#E0F2FE" stroke="#334155" stroke-width="6"/>
+  <!-- Movable Piston compressing gas -->
+  <rect x="130" y="35" width="20" height="80" fill="#64748B"/>
+  <rect x="80" y="110" width="120" height="22" fill="#475569"/>
+  <!-- Gas molecules bouncing inside -->
+  <circle cx="105" cy="165" r="8" fill="#EF4444"/>
+  <circle cx="155" cy="185" r="8" fill="#EF4444"/>
+  <circle cx="125" cy="215" r="8" fill="#EF4444"/>
+  <circle cx="175" cy="155" r="8" fill="#EF4444"/>
+  <circle cx="168" cy="222" r="8" fill="#EF4444"/>
+  <!-- Pressure Gauge on right -->
+  <circle cx="245" cy="155" r="28" fill="#FFFBEB" stroke="#D97706" stroke-width="5"/>
+  <line x1="245" y1="155" x2="262" y2="140" stroke="#DC2626" stroke-width="4" stroke-linecap="round"/>
+</svg>

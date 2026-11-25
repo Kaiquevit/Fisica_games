@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Cold Thermometer on Left -->
+  <rect x="65" y="45" width="24" height="135" rx="12" fill="#E0F2FE" stroke="#0284C7" stroke-width="4"/>
+  <circle cx="77" cy="180" r="20" fill="#3B82F6" stroke="#0284C7" stroke-width="4"/>
+  <rect x="72" y="135" width="10" height="45" fill="#3B82F6"/>
+  <!-- Heat Arrow +Q in middle -->
+  <path d="M115 120 L185 120 M170 106 L187 120 L170 134" stroke="#F97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="150" y="96" text-anchor="middle" fill="#EA580C" font-size="28" font-weight="bold">+Q</text>
+  <!-- Hot Thermometer on Right (Delta T) -->
+  <rect x="210" y="45" width="24" height="135" rx="12" fill="#FEE2E2" stroke="#DC2626" stroke-width="4"/>
+  <circle cx="222" cy="180" r="20" fill="#EF4444" stroke="#DC2626" stroke-width="4"/>
+  <rect x="217" y="65" width="10" height="115" fill="#EF4444"/>
+</svg>

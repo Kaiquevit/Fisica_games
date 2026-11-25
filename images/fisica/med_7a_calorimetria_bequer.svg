@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Bunsen Burner Flame at bottom -->
+  <rect x="95" y="232" width="90" height="12" rx="6" fill="#475569"/>
+  <path d="M115 232 Q140 190 165 232 Z" fill="#F97316"/>
+  <path d="M125 232 Q140 205 155 232 Z" fill="#FACC15"/>
+  <!-- Lab Beaker with heated liquid -->
+  <path d="M85 95 L85 200 Q85 215 100 215 L180 215 Q195 215 195 200 L195 95" fill="#E0F2FE" stroke="#0284C7" stroke-width="5" stroke-linecap="round"/>
+  <path d="M88 135 L88 200 Q88 212 100 212 L180 212 Q192 212 192 200 L192 135 Z" fill="#38BDF8"/>
+  <!-- Thermometer inside beaker rising -->
+  <rect x="210" y="55" width="22" height="145" rx="11" fill="#FFFFFF" stroke="#475569" stroke-width="4"/>
+  <circle cx="221" cy="200" r="18" fill="#EF4444" stroke="#475569" stroke-width="4"/>
+  <rect x="216" y="82" width="10" height="118" rx="5" fill="#EF4444"/>
+</svg>

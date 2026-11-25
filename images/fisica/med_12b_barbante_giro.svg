@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Hand in center spinning a ball on a string of radius R -->
+  <ellipse cx="150" cy="120" rx="105" ry="70" fill="none" stroke="#94A3B8" stroke-width="4" stroke-dasharray="7,7"/>
+  <circle cx="150" cy="120" r="14" fill="#FDBA74" stroke="#C2410C" stroke-width="3"/>
+  <!-- String and inward Centripetal Tension arrow -->
+  <line x1="150" y1="120" x2="242" y2="85" stroke="#334155" stroke-width="4"/>
+  <path d="M225 91 L170 112 M180 100 L168 113 L186 114" stroke="#DC2626" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <circle cx="242" cy="85" r="18" fill="#2563EB" stroke="#1E3A8A" stroke-width="4"/>
+  <text x="190" y="75" text-anchor="middle" fill="#1E293B" font-size="24" font-weight="bold">R</text>
+</svg>

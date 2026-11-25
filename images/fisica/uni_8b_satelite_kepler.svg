@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Kepler Equal Areas swept in Equal Times -->
+  <ellipse cx="150" cy="120" rx="112" ry="74" fill="#0F172A" stroke="#38BDF8" stroke-width="4"/>
+  <!-- Equal Area Sector 1 (Close & Wide) -->
+  <path d="M110 120 L38 120 A112 74 0 0 1 65 72 Z" fill="#F97316" opacity="0.7"/>
+  <!-- Equal Area Sector 2 (Far & Narrow) -->
+  <path d="M110 120 L256 96 A112 74 0 0 1 256 144 Z" fill="#38BDF8" opacity="0.7"/>
+  <!-- Star at focus -->
+  <circle cx="110" cy="120" r="20" fill="#FACC15" stroke="#EA580C" stroke-width="4"/>
+</svg>

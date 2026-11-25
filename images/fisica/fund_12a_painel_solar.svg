@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Bright Sun -->
+  <circle cx="75" cy="72" r="30" fill="#FACC15" stroke="#F59E0B" stroke-width="4"/>
+  <!-- Sun rays hitting solar panel -->
+  <line x1="108" y1="95" x2="145" y2="130" stroke="#FACC15" stroke-width="5" stroke-linecap="round" stroke-dasharray="6,6"/>
+  <line x1="92" y1="112" x2="125" y2="148" stroke="#FACC15" stroke-width="5" stroke-linecap="round" stroke-dasharray="6,6"/>
+  <!-- Tilted Solar Photovoltaic Panel -->
+  <polygon points="105,155 235,125 258,205 78,235" fill="#1D4ED8" stroke="#1E293B" stroke-width="5" stroke-linejoin="round"/>
+  <line x1="170" y1="140" x2="168" y2="220" stroke="#93C5FD" stroke-width="3"/>
+  <line x1="92" y1="195" x2="246" y2="165" stroke="#93C5FD" stroke-width="3"/>
+  <rect x="155" y="222" width="22" height="35" fill="#64748B"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Deep space circle -->
+  <circle cx="150" cy="150" r="122" fill="#0F172A"/>
+  <!-- Kepler Elliptical Orbit -->
+  <ellipse cx="150" cy="150" rx="102" ry="66" fill="none" stroke="#38BDF8" stroke-width="3" stroke-dasharray="7,6" transform="rotate(-18 150 150)"/>
+  <!-- Central Star / Mass M at focus -->
+  <circle cx="115" cy="162" r="26" fill="#FACC15" stroke="#F97316" stroke-width="4"/>
+  <!-- Orbiting Planet / Mass m -->
+  <circle cx="225" cy="112" r="14" fill="#3B82F6" stroke="#93C5FD" stroke-width="3"/>
+  <!-- Gravitational Force Vector F_G pointing from m toward M -->
+  <path d="M 212 118 L 148 147 M 156 134 L 145 148 L 163 150" stroke="#EF4444" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Orbital Velocity Vector v tangent to ellipse -->
+  <path d="M 225 112 L 195 58 M 192 73 L 194 56 L 208 65" stroke="#22C55E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

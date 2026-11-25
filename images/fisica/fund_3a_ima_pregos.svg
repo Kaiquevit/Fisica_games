@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" rx="20" fill="#FAF8F5"/>
+  <!-- Horseshoe Magnet -->
+  <path d="M75 170 L75 105 A65 65 0 0 1 205 105 L205 170" fill="none" stroke="#EF4444" stroke-width="36" stroke-linecap="butt"/>
+  <!-- Blue half overlay for South pole -->
+  <path d="M140 40 A65 65 0 0 1 205 105 L205 170" fill="none" stroke="#2563EB" stroke-width="36" stroke-linecap="butt"/>
+  <!-- Grey metallic tips -->
+  <rect x="57" y="155" width="36" height="24" fill="#CBD5E1" stroke="#475569" stroke-width="3"/>
+  <rect x="187" y="155" width="36" height="24" fill="#CBD5E1" stroke="#475569" stroke-width="3"/>
+  <!-- Magnetic field waves -->
+  <path d="M75 190 Q140 225 205 190" fill="none" stroke="#F59E0B" stroke-width="3" stroke-dasharray="6,6"/>
+  <path d="M65 205 Q140 250 215 205" fill="none" stroke="#F59E0B" stroke-width="3" stroke-dasharray="6,6"/>
+  <!-- Iron nails being attracted upward -->
+  <!-- Nail 1 -->
+  <g transform="translate(80, 215) rotate(-25)">
+    <rect x="-4" y="0" width="8" height="38" fill="#64748B"/>
+    <rect x="-10" y="-5" width="20" height="6" rx="2" fill="#475569"/>
+    <polygon points="-4,38 4,38 0,48" fill="#64748B"/>
+  </g>
+  <!-- Nail 2 -->
+  <g transform="translate(140, 225) rotate(10)">
+    <rect x="-4" y="0" width="8" height="38" fill="#64748B"/>
+    <rect x="-10" y="-5" width="20" height="6" rx="2" fill="#475569"/>
+    <polygon points="-4,38 4,38 0,48" fill="#64748B"/>
+  </g>
+  <!-- Nail 3 -->
+  <g transform="translate(198, 212) rotate(28)">
+    <rect x="-4" y="0" width="8" height="38" fill="#64748B"/>
+    <rect x="-10" y="-5" width="20" height="6" rx="2" fill="#475569"/>
+    <polygon points="-4,38 4,38 0,48" fill="#64748B"/>
+  </g>
+</svg>
