@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * PROJETO EDUCATIVO: FÍSICAPLAY — OPET DE FÍSICA
+ * PROJETO EDUCATIVO: FÍSICAPLAY — PET DE FÍSICA
  * Desenvolvido pelo aluno: Kaique Vitor
  * ============================================================================
  * ESTRUTURA DE DADOS PEDAGÓGICA (36 PARES = 72 CARTAS NO TOTAL)

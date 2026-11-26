@@ -125,15 +125,15 @@ if (avatarMount && window.PhysicsAvatar) {
   renderAvatarCreator();
 }
 
-// 2. Garante que todas as páginas (page1.html, pag2.html, pag3.html) tenham o banner OPET - Kaique Vitor, os 6 modos e os 5 níveis (com Médio e Difícil)
+// 2. Garante que todas as páginas (page1.html, pag2.html, pag3.html) tenham o banner PET de Física - Kaique Vitor, os 6 modos e os 5 níveis (com Médio e Difícil)
 const ensureProjectUI = () => {
   if (form && !form.querySelector('.project-credit-banner')) {
     const banner = document.createElement('div');
     banner.className = 'project-credit-banner';
     banner.innerHTML = `
-      <span class="project-credit-tag">🎓 Projeto Acadêmico • OPET de Física</span>
+      <span class="project-credit-tag">🎓 Projeto Acadêmico • PET de Física</span>
       <p class="project-credit-title">
-        Desenvolvido para a <strong>OPET de Física</strong> pelo aluno <strong>Kaique Vitor</strong>
+        Desenvolvido para o <strong>PET de Física</strong> pelo aluno <strong>Kaique Vitor</strong>
       </p>
       <p class="project-credit-desc">
         Ferramenta educativa gamificada com tabuleiros de <strong>24 cartas (12 pares complementares)</strong>, níveis <strong>Médio (Desenhos + Fórmulas Pela Metade)</strong> e <strong>Difícil (Equações Completas)</strong>, modos <strong>Só Encontrar Pares</strong> ou <strong>Com Quiz</strong>, e <strong>Duelo de 2 Jogadores (1v1)</strong>.
