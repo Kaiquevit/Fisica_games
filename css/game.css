@@ -19,9 +19,10 @@ main {
   align-items: center;
   justify-content: flex-start;
   padding: 14px 16px 32px;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Cabeçalho do Jogo */
+/* Cabeçalho do Jogo (PC) */
 .game-header {
   display: flex;
   flex-direction: column;
@@ -103,6 +104,7 @@ main {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .btn-back:hover,
@@ -226,6 +228,7 @@ main {
   padding: 9px 14px;
   transition: all 0.25s ease;
   opacity: 0.68;
+  min-width: 0;
 }
 
 .duel-player-card.active-turn {
@@ -306,6 +309,9 @@ main {
   font-size: 0.72rem;
   color: #94a3b8;
   font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .duel-metrics {
@@ -313,6 +319,7 @@ main {
   align-items: center;
   gap: 8px;
   margin-top: 2px;
+  flex-wrap: wrap;
 }
 
 .duel-pairs-badge {
@@ -480,6 +487,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
 }
 
 .btn-powerup:hover:not(:disabled) {
@@ -527,7 +535,7 @@ main {
 }
 
 /* ============================================================================
-   TABULEIRO DE CARTAS (24 Cartas = 6x4, 18 Cartas = 6x3, 12 Cartas = 4x3)
+   TABULEIRO DE CARTAS (PC: 6 Colunas para 24/18 Cartas, 4 Colunas para 12 Cartas)
    ============================================================================ */
 .grid {
   display: grid;
@@ -907,6 +915,7 @@ main {
   justify-content: space-between;
   color: #0f172a;
   min-height: 170px;
+  min-width: 0;
 }
 
 .modal-mini-card--a {
@@ -1200,7 +1209,9 @@ main {
   background: #475569;
 }
 
-/* Responsividade */
+/* ============================================================================
+   RESPONSIVIDADE MOBILE INTUITIVA PARA O TABULEIRO (CELULARES E TELAS PEQUENAS)
+   ============================================================================ */
 @media screen and (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
@@ -1208,33 +1219,403 @@ main {
 }
 
 @media screen and (max-width: 768px) {
+  main {
+    padding: 8px 8px 20px;
+  }
+
+  .game-header {
+    padding: 9px 10px;
+    gap: 7px;
+    margin-bottom: 9px;
+    border-radius: 14px;
+  }
+
+  .header-top {
+    gap: 6px;
+    justify-content: space-between;
+  }
+
+  .btn-back,
+  .btn-restart {
+    padding: 5px 9px;
+    font-size: 0.74rem;
+    border-radius: 8px;
+  }
+
+  .header-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .player {
+    font-size: 0.88rem;
+  }
+
+  .player-title {
+    font-size: 0.65rem;
+  }
+
+  /* Seletores de Nível, Modo e Cartas compactos em linha no celular */
+  .controls-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    order: 3;
+  }
+
+  .level-switch-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    width: 100%;
+  }
+
+  .level-switch-wrapper .info-label {
+    font-size: 0.65rem;
+  }
+
+  .level-select {
+    width: 100%;
+    padding: 5px 6px;
+    font-size: 0.72rem;
+    border-radius: 8px;
+    text-overflow: ellipsis;
+  }
+
+  .stats-group {
+    width: 100%;
+    justify-content: space-between;
+    gap: 4px;
+    order: 4;
+  }
+
+  .stat-pill {
+    padding: 4px 7px;
+    font-size: 0.73rem;
+    border-radius: 8px;
+    flex: 1;
+    justify-content: center;
+  }
+
+  /* Placar de Duelo 1v1 no Celular: LADO A LADO compacto (não empilha em 3 linhas gigantes!) */
   .duel-scoreboard {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 86px 1fr;
+    gap: 6px;
+    padding-top: 6px;
   }
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 11px;
+
+  .duel-player-card {
+    padding: 6px 8px;
+    gap: 6px;
+    border-radius: 11px;
   }
+
+  .duel-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .duel-name {
+    font-size: 0.78rem;
+  }
+
+  .duel-turn-tag {
+    font-size: 0.56rem;
+    padding: 1px 5px;
+  }
+
+  .duel-subtitle {
+    display: none;
+  }
+
+  .duel-metrics {
+    gap: 4px;
+  }
+
+  .duel-pairs-badge {
+    font-size: 0.7rem;
+    padding: 1px 6px;
+  }
+
+  .duel-pairs-badge strong {
+    font-size: 0.8rem;
+  }
+
+  .duel-xp-badge {
+    font-size: 0.66rem;
+  }
+
+  .duel-center-clock {
+    padding: 4px 6px;
+    border-radius: 11px;
+  }
+
+  .duel-vs-badge {
+    font-size: 0.55rem;
+  }
+
+  .duel-timer-value {
+    font-size: 1.15rem;
+  }
+
+  .duel-turn-status {
+    display: none;
+  }
+
+  .turn-toast {
+    padding: 5px 10px;
+    font-size: 0.74rem;
+    border-radius: 9px;
+  }
+
+  /* Power-ups e Legenda compactos no celular */
+  .lab-toolbar {
+    padding-top: 6px;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .powerup-title {
+    display: none;
+  }
+
+  .powerups-bar {
+    width: 100%;
+    justify-content: space-between;
+    gap: 4px;
+  }
+
+  .btn-powerup {
+    flex: 1;
+    justify-content: center;
+    padding: 5px 6px;
+    font-size: 0.68rem;
+  }
+
+  .ux-legend-bar {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.65rem;
+    gap: 5px;
+  }
+
+  .legend-badge {
+    padding: 2px 7px;
+  }
+
+  /* Tabuleiro no Celular: 4 Cartas por linha para caber o jogo na tela sem rolar! */
+  .grid,
+  .grid.grid-12 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px;
+  }
+
+  .card {
+    aspect-ratio: 3 / 3.75;
+    border-radius: 10px;
+  }
+
+  .face {
+    border-radius: 10px;
+  }
+
+  .front {
+    padding: 4px;
+  }
+
+  .card[data-type="A"] .front,
+  .card[data-type="B"] .front {
+    border-width: 2.5px;
+  }
+
+  .back {
+    border-width: 2px;
+  }
+
+  .card-corner-badge {
+    font-size: 0.52rem;
+    padding: 1px 5px;
+  }
+
+  .card-illustration {
+    max-height: 64px;
+  }
+
+  .card-hybrid-img {
+    max-height: 44px;
+  }
+
+  .half-formula-pill {
+    font-size: 0.54rem;
+    padding: 2px 3px;
+    border-radius: 5px;
+    line-height: 1.15;
+  }
+
+  .half-blank {
+    padding: 0 3px;
+  }
+
+  .card-formula-box {
+    padding: 3px 2px;
+    border-radius: 7px;
+    border-width: 1.5px;
+  }
+
+  .card-formula-box .katex {
+    font-size: 0.64rem;
+  }
+
+  .card-formula-box .formula-secondary {
+    margin-top: 2px;
+    padding-top: 2px;
+  }
+
+  .card-formula-box .formula-secondary .katex {
+    font-size: 0.56rem;
+  }
+
+  .card-caption {
+    font-size: 0.54rem;
+    padding: 2px 3px;
+    border-radius: 5px;
+    line-height: 1.1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card.matched-card::after {
+    top: 3px;
+    right: 3px;
+    min-width: 18px;
+    height: 16px;
+    font-size: 0.55rem;
+    padding: 0 4px;
+  }
+
+  .game-project-footer {
+    margin-top: 12px;
+    padding: 7px 12px;
+    font-size: 0.7rem;
+  }
+
+  /* Modal Educativo no Celular: Cartas A e B permanecem Lado a Lado compactas! */
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-card {
+    padding: 14px 12px;
+    border-radius: 18px;
+    max-height: 94vh;
+  }
+
+  .modal-header-badge {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    margin-bottom: 6px;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .modal-cards-comparison {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 6px;
+    margin-bottom: 10px;
+    align-items: stretch;
+  }
+
+  .modal-mini-card {
+    padding: 7px;
+    min-height: 125px;
+    border-radius: 12px;
+    border-width: 3px;
+  }
+
+  .mini-type-tag {
+    font-size: 0.58rem;
+    padding: 2px 6px;
+  }
+
+  .mini-card-visual img {
+    max-width: 68px;
+    max-height: 64px;
+  }
+
+  .modal-mini-card .half-formula-pill {
+    font-size: 0.62rem;
+  }
+
+  .modal-mini-card .card-formula-box .katex {
+    font-size: 0.78rem;
+  }
+
+  .mini-card-label {
+    font-size: 0.66rem;
+    padding: 3px 5px;
+  }
+
+  .modal-pair-plus {
+    font-size: 1.1rem;
+  }
+
+  .modal-explanation-box {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 11px;
+  }
+
+  .modal-explanation {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .modal-challenge-box {
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+  }
+
+  .challenge-question {
+    font-size: 0.84rem;
+    margin-bottom: 8px;
+  }
+
+  .challenge-opt-btn {
+    padding: 7px 10px;
+    font-size: 0.78rem;
+  }
+
+  .btn-continue,
+  .btn-secondary {
+    padding: 11px 16px;
+    font-size: 0.92rem;
+    border-radius: 11px;
+  }
+
   .victory-stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 }
 
-@media screen and (max-width: 540px) {
+/* Ajuste extra para telas muito estreitas (<= 360px) */
+@media screen and (max-width: 360px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
   }
-  .modal-cards-comparison {
-    flex-direction: column;
+  .duel-scoreboard {
+    grid-template-columns: 1fr 72px 1fr;
   }
-  .modal-pair-plus {
-    transform: rotate(90deg);
-    margin: -4px 0;
-  }
-  .victory-actions,
-  .victory-stats-grid.duel-summary-grid {
-    grid-template-columns: 1fr;
-    flex-direction: column;
+  .duel-avatar {
+    display: none;
   }
 }

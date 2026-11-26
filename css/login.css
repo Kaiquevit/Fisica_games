@@ -21,7 +21,7 @@
   text-align: center;
 }
 
-/* Card Institucional do Projeto OPET de Física - Kaique Vitor */
+/* Card Institucional do Projeto PET de Física - Kaique Vitor */
 .project-credit-banner {
   width: 100%;
   background: linear-gradient(135deg, rgba(37, 99, 235, 0.22) 0%, rgba(234, 88, 12, 0.18) 100%);
@@ -230,7 +230,7 @@
   border-color: #38bdf8;
 }
 
-/* Campos de Nome (Jogador 1 e Jogador 2 lado a lado no modo Duelo) */
+/* Campos de Nome */
 .players-names-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -330,7 +330,7 @@
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
 }
 
-/* Seletor de 3 Níveis e Modos de Jogo */
+/* Seletor de Níveis e Modos de Jogo (Desktop: 3 colunas) */
 .level-selector,
 .mode-selector {
   display: grid;
@@ -456,24 +456,183 @@
   color: #38bdf8;
 }
 
-@media screen and (max-width: 780px) {
-  .login-form {
-    padding: 22px 16px;
+/* ============================================================================
+   RESPONSIVIDADE MOBILE INTUITIVA (CELULARES E TELAS PEQUENAS <= 768px)
+   ============================================================================ */
+@media screen and (max-width: 768px) {
+  .home-main {
+    padding: 12px 10px 32px;
   }
+
+  .login-form {
+    padding: 16px 12px;
+    border-radius: 18px;
+  }
+
+  .project-credit-banner {
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    border-radius: 12px;
+  }
+
+  .project-credit-title {
+    font-size: 0.9rem;
+  }
+
+  .project-credit-desc {
+    font-size: 0.76rem;
+    line-height: 1.3;
+  }
+
+  .login__hearder {
+    margin-bottom: 14px;
+  }
+
+  .login__hearder h1 {
+    font-size: 1.35rem;
+  }
+
+  .login__hearder h2 {
+    font-size: 0.84rem;
+  }
+
+  /* Avatar compacto e intuitivo no celular */
+  .avatar-slot-tabs {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .avatar-slot-tab {
+    padding: 7px 8px;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
   .avatar-creator-card {
     grid-template-columns: 1fr;
-    justify-items: center;
+    padding: 12px;
+    gap: 12px;
+    margin-bottom: 12px;
   }
+
+  .avatar-preview-column {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .avatar-preview-box {
+    width: 74px;
+    height: 74px;
+  }
+
   .avatar-controls-grid {
     width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
-  .ux-legend-preview,
-  .level-selector,
+
+  .avatar-control-item label {
+    font-size: 0.68rem;
+  }
+
+  .avatar-select {
+    padding: 6px 8px;
+    font-size: 0.78rem;
+  }
+
+  /* Cards de Modo e Nível em 2 Colunas Lado a Lado (Estilo App Mobile!) */
   .mode-selector,
-  .players-names-grid.two-players {
-    grid-template-columns: 1fr;
+  .level-selector {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
-  .login__hearder h1 {
-    font-size: 1.55rem;
+
+  .level-card {
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .level-card-header {
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .level-icon {
+    font-size: 1.15rem;
+  }
+
+  .level-age {
+    font-size: 0.62rem;
+    padding: 2px 6px;
+  }
+
+  .level-title {
+    font-size: 0.84rem;
+    line-height: 1.2;
+  }
+
+  .level-desc {
+    font-size: 0.7rem;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Nomes dos jogadores */
+  .players-names-grid.two-players {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-label {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .login__input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+
+  /* Legenda Tipo A vs B lado a lado compacta */
+  .ux-legend-preview {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .ux-pill {
+    padding: 8px 10px;
+    font-size: 0.74rem;
+    gap: 6px;
+    border-radius: 10px;
+  }
+
+  .ux-pill-icon {
+    font-size: 1.1rem;
+  }
+
+  .login__button {
+    padding: 14px 18px;
+    font-size: 0.98rem;
+    border-radius: 12px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .players-names-grid.two-players,
+  .ux-legend-preview {
+    grid-template-columns: 1fr;
   }
 }
