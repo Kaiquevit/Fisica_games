@@ -192,14 +192,26 @@ if (btnRandP2 && window.PhysicsAvatar) {
   });
 }
 
-// Preenche nomes salvos anteriormente
+// Preenche nomes salvos anteriormente apenas se o usuário já tiver digitado um nome personalizado
 const savedPlayer1 = localStorage.getItem('player');
-if (player1Input) {
-  player1Input.value = savedPlayer1 && savedPlayer1.trim().length >= 2 ? savedPlayer1 : 'Cientista 1';
+if (
+  player1Input &&
+  savedPlayer1 &&
+  savedPlayer1.trim().length >= 2 &&
+  savedPlayer1 !== 'Cientista 1' &&
+  savedPlayer1 !== 'Jogador 1'
+) {
+  player1Input.value = savedPlayer1;
 }
 const savedPlayer2 = localStorage.getItem('player2');
-if (player2Input) {
-  player2Input.value = savedPlayer2 && savedPlayer2.trim().length >= 2 ? savedPlayer2 : 'Cientista 2';
+if (
+  player2Input &&
+  savedPlayer2 &&
+  savedPlayer2.trim().length >= 2 &&
+  savedPlayer2 !== 'Cientista 2' &&
+  savedPlayer2 !== 'Jogador 2'
+) {
+  player2Input.value = savedPlayer2;
 }
 
 // Pré-seleciona nível e modo
@@ -249,11 +261,12 @@ const goToStep2 = () => {
 
   if (stepSubtitle) {
     stepSubtitle.innerHTML = isDuel
-      ? 'Passo 2 de 2: Confirme os nomes e avatares dos <strong>2 Jogadores</strong>.'
-      : 'Passo 2 de 2: Confirme seu nome e avatar de cientista.';
+      ? 'Passo 2 de 2: Toque no campo se quiser colocar o nome dos <strong>2 Jogadores</strong>.'
+      : 'Passo 2 de 2: Toque no campo se quiser colocar seu nome.';
   }
 
-  if (player1Input) player1Input.focus();
+  // Rola suavemente para o topo sem dar focus() automático no input (evita abrir o teclado sozinho no celular!)
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
 const goToStep1 = () => {
