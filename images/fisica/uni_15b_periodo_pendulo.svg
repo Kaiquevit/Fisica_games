@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Pendulum Period T depends on sqrt(L/g) -->
+  <circle cx="150" cy="120" r="78" fill="#EFF6FF" stroke="#2563EB" stroke-width="5"/>
+  <text x="150" y="110" text-anchor="middle" fill="#1E3A8A" font-size="26" font-weight="bold">sen(θ) ≈ θ</text>
+  <text x="150" y="152" text-anchor="middle" fill="#EA580C" font-size="28" font-weight="bold">T = 2π√(L/g)</text>
+</svg>

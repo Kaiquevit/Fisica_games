@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Escape Velocity: Rocket escaping planet gravity well -->
+  <circle cx="85" cy="155" r="52" fill="#2563EB" stroke="#1E3A8A" stroke-width="4"/>
+  <path d="M125 120 Q185 65 265 45" fill="none" stroke="#16A34A" stroke-width="6" stroke-dasharray="8,6"/>
+  <polygon points="272,43 254,40 260,55" fill="#16A34A"/>
+  <circle cx="205" cy="72" r="12" fill="#EF4444"/>
+  <text x="195" y="145" text-anchor="middle" fill="#15803D" font-size="24" font-weight="bold">K + U = 0</text>
+</svg>

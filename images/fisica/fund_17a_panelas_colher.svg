@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Hot Pot with Wooden Spoon (Insulator) vs Metal Spoon (Conductor) -->
+  <rect x="75" y="125" width="150" height="85" rx="10" fill="#64748B" stroke="#334155" stroke-width="5"/>
+  <!-- Wooden spoon on left (cool) -->
+  <line x1="115" y1="135" x2="80" y2="55" stroke="#B45309" stroke-width="12" stroke-linecap="round"/>
+  <!-- Metal spoon on right (glowing red hot!) -->
+  <line x1="185" y1="135" x2="220" y2="55" stroke="#EF4444" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="220" cy="55" r="14" fill="#FEF08A" opacity="0.7"/>
+</svg>

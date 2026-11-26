@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Ceiling beam and Pulley wheel lifting heavy crate -->
+  <rect x="60" y="25" width="180" height="14" rx="4" fill="#334155"/>
+  <line x1="150" y1="39" x2="150" y2="68" stroke="#475569" stroke-width="6"/>
+  <circle cx="150" cy="75" r="24" fill="#F59E0B" stroke="#B45309" stroke-width="4"/>
+  <!-- Rope over pulley -->
+  <line x1="126" y1="75" x2="126" y2="155" stroke="#78350F" stroke-width="5"/>
+  <line x1="174" y1="75" x2="215" y2="175" stroke="#78350F" stroke-width="5"/>
+  <!-- Heavy crate on left -->
+  <rect x="96" y="155" width="60" height="55" rx="6" fill="#2563EB" stroke="#1E3A8A" stroke-width="4"/>
+  <!-- Downward pull arrow on right -->
+  <path d="M230 130 L245 170 M232 165 L246 172 L248 158" stroke="#16A34A" stroke-width="6" stroke-linecap="round" fill="none"/>
+</svg>

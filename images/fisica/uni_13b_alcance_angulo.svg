@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Max Range R at 45 deg vs 30/60 deg -->
+  <line x1="30" y1="195" x2="275" y2="195" stroke="#334155" stroke-width="5"/>
+  <path d="M40 195 Q125 65 210 195" fill="none" stroke="#94A3B8" stroke-width="4" stroke-dasharray="5,5"/>
+  <path d="M40 195 Q155 45 270 195" fill="none" stroke="#16A34A" stroke-width="6"/>
+  <text x="155" y="165" text-anchor="middle" fill="#15803D" font-size="24" font-weight="bold">45° (Alcance Máx R)</text>
+</svg>

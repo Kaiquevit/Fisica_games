@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Hot Sun heating steel train rails -->
+  <circle cx="150" cy="52" r="24" fill="#FACC15" stroke="#F97316" stroke-width="4"/>
+  <!-- Wooden sleepers -->
+  <rect x="45" y="135" width="22" height="65" fill="#854D0E"/>
+  <rect x="105" y="135" width="22" height="65" fill="#854D0E"/>
+  <rect x="175" y="135" width="22" height="65" fill="#854D0E"/>
+  <rect x="235" y="135" width="22" height="65" fill="#854D0E"/>
+  <!-- Steel rails with thermal expansion gap in center -->
+  <rect x="25" y="155" width="115" height="22" rx="3" fill="#64748B" stroke="#334155" stroke-width="3"/>
+  <rect x="160" y="155" width="115" height="22" rx="3" fill="#64748B" stroke="#334155" stroke-width="3"/>
+  <path d="M122 125 L142 125 M178 125 L158 125" stroke="#EF4444" stroke-width="5" stroke-linecap="round"/>
+</svg>

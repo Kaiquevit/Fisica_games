@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Doppler Frequency comparison: Stretched Low f on Left vs Compressed High f on Right -->
+  <path d="M25 120 C45 55, 75 55, 95 120 C115 185, 145 185, 165 120" fill="none" stroke="#3B82F6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M165 120 C175 55, 185 55, 195 120 C205 185, 215 185, 225 120 C235 55, 245 55, 255 120 C265 185, 275 185, 285 120" fill="none" stroke="#EF4444" stroke-width="6" stroke-linecap="round"/>
+  <text x="90" y="210" text-anchor="middle" fill="#1E3A8A" font-size="20" font-weight="bold">Grave (-f)</text>
+  <text x="225" y="210" text-anchor="middle" fill="#991B1B" font-size="20" font-weight="bold">Agudo (+f)</text>
+</svg>

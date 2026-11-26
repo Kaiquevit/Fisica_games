@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Spring deformation Delta x ruler -->
+  <rect x="65" y="40" width="28" height="160" rx="4" fill="#FACC15" stroke="#B45309" stroke-width="3"/>
+  <path d="M125 65 L235 65" stroke="#94A3B8" stroke-width="4" stroke-dasharray="6,6"/>
+  <path d="M125 175 L235 175" stroke="#EA580C" stroke-width="4" stroke-dasharray="6,6"/>
+  <path d="M180 68 L180 172 M168 82 L180 66 L192 82 M168 158 L180 174 L192 158" stroke="#EA580C" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <text x="228" y="130" text-anchor="middle" fill="#9A3412" font-size="32" font-weight="bold">Δx</text>
+</svg>

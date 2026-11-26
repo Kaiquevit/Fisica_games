@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Static Equilibrium of Rigid Beam supported at two ends -->
+  <polygon points="65,155 45,195 85,195" fill="#F97316"/>
+  <polygon points="235,155 215,195 255,195" fill="#F97316"/>
+  <rect x="40" y="138" width="220" height="17" rx="4" fill="#475569"/>
+  <!-- Upward normal forces N1, N2 and downward weight Mg -->
+  <path d="M65 135 L65 75 M55 88 L65 73 L75 88" stroke="#16A34A" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M235 135 L235 75 M225 88 L235 73 L245 88" stroke="#16A34A" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M150 155 L150 215 M140 202 L150 217 L160 202" stroke="#EF4444" stroke-width="6" stroke-linecap="round" fill="none"/>
+</svg>

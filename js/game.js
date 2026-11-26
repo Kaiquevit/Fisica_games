@@ -3,17 +3,16 @@
  * PROJETO EDUCATIVO: FÍSICAPLAY — PET DE FÍSICA
  * Desenvolvido pelo aluno: Kaique Vitor
  * ============================================================================
- * ESTRUTURA DE DADOS PEDAGÓGICA (36 PARES = 72 CARTAS NO TOTAL)
- * Níveis e Dificuldades disponíveis:
- *  - 'fundamental': Ensino Fundamental (10-12 anos) -> 12 pares (24 cartas) [Mantido como está]
- *  - 'medio': Ensino Médio (13-17) [Nível Médio: Desenhos Físicos + Fórmulas Pela Metade]
- *  - 'medio_dificil': Ensino Médio (13-17) [Nível Difícil: Fórmulas Completas]
- *  - 'faculdade': Física 1 Universitária [Nível Médio: Desenhos Práticos + Fórmulas Guiadas]
- *  - 'faculdade_dificil': Física 1 Universitária [Nível Difícil: Cálculo Diferencial/Integral Puro]
+ * ESTRUTURA DE DADOS PEDAGÓGICA (54 PARES = 108 CARTAS NO TOTAL)
+ * - Cada nível ('fundamental', 'medio', 'faculdade') possui 18 pares (36 cartas).
+ * - Cada um dos 6 Modos de Jogo seleciona um deck próprio de cartas (a maioria
+ *   diferente entre cada modo!).
+ * - Nos modos COM QUIZ, o par só permanece aberto se o jogador acertar a
+ *   pergunta do Quiz; se errar o Quiz, as duas cartas fecham novamente!
  */
 const PHYSICS_GAME_DATA = {
   // ==========================================================================
-  // NÍVEL 1: ENSINO FUNDAMENTAL (10 a 12 anos) - 12 Pares (24 Cartas)
+  // NÍVEL 1: ENSINO FUNDAMENTAL (10 a 12 anos) - 18 Pares (36 Cartas)
   // ==========================================================================
   fundamental: [
     // PAR 1: Gravidade
@@ -140,7 +139,7 @@ const PHYSICS_GAME_DATA = {
         'Refração da Luz! A luz branca parece de uma cor só, mas na verdade é a mistura de todas as cores do arco-íris!'
     },
 
-    // PAR 5: Máquinas Simples
+    // PAR 5: Máquinas Simples (Alavanca)
     {
       pairId: 'maquinas_simples',
       type: 'A',
@@ -386,12 +385,197 @@ const PHYSICS_GAME_DATA = {
       conceptTitle: 'Transformação de Energia!',
       explanation:
         'Transformação de Energia! Na Física, a energia nunca surge do nada: os painéis solares transformam a energia luminosa do Sol em energia elétrica para iluminar uma casa!'
+    },
+
+    // PAR 13: Inércia (1ª Lei de Newton)
+    {
+      pairId: 'inercia_onibus',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/fund_13a_onibus_freando.svg',
+      label: 'Ônibus Freando e Passageiro Indo à Frente',
+      conceptTitle: 'Inércia (1ª Lei de Newton)!',
+      explanation:
+        'Inércia! Todo corpo em movimento tende a continuar em movimento. Quando o ônibus freia de repente, seu corpo continua indo para frente — por isso usamos o cinto de segurança!',
+      challenge: {
+        question: 'Por que nosso corpo é jogado para frente quando o carro ou ônibus freia bruscamente?',
+        options: [
+          'Pela Inércia: nosso corpo tende a continuar com a velocidade que já tinha.',
+          'Porque o banco empurra a gente para frente.',
+          'Porque a gravidade muda de direção.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'inercia_onibus',
+      type: 'B',
+      contentType: 'image',
+      content: '../images/fisica/fund_13b_cinto_seguranca.svg',
+      label: 'Cinto de Segurança Segurando o Corpo',
+      conceptTitle: 'Inércia (1ª Lei de Newton)!',
+      explanation:
+        'Inércia! Todo corpo em movimento tende a continuar em movimento. Quando o ônibus freia de repente, seu corpo continua indo para frente — por isso usamos o cinto de segurança!'
+    },
+
+    // PAR 14: Dilatação Térmica
+    {
+      pairId: 'dilatacao_trilho',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/fund_14a_trilho_trem.svg',
+      label: 'Espaço nos Trilhos de Trem ao Sol',
+      conceptTitle: 'Dilatação Térmica!',
+      explanation:
+        'Dilatação Térmica! Quando aquecidos, os metais aumentam de tamanho (dilatam). Por isso existem espaços entre os trilhos do trem e água morna ajuda a soltar tampas de metal!',
+      challenge: {
+        question: 'Por que os engenheiros deixam pequenos espaços (juntas) entre os trilhos de aço do trem?',
+        options: [
+          'Para o aço ter espaço para dilatar (crescer) nos dias quentes sem entortar o trilho.',
+          'Para economizar ferro na construção.',
+          'Para o trem fazer barulho.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'dilatacao_trilho',
+      type: 'B',
+      contentType: 'image',
+      content: '../images/fisica/fund_14b_tampa_quente.svg',
+      label: 'Tampa de Metal Dilatando no Calor',
+      conceptTitle: 'Dilatação Térmica!',
+      explanation:
+        'Dilatação Térmica! Quando aquecidos, os metais aumentam de tamanho (dilatam). Por isso existem espaços entre os trilhos do trem e água morna ajuda a soltar tampas de metal!'
+    },
+
+    // PAR 15: Eletricidade Estática
+    {
+      pairId: 'eletricidade_estatica',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/fund_15a_balao_cabelo.svg',
+      label: 'Balão Atraindo Fios de Cabelo',
+      conceptTitle: 'Eletricidade Estática!',
+      explanation:
+        'Eletricidade Estática! Ao esfregar um balão no cabelo, cargas elétricas passam de um para o outro e se atraem. Nas nuvens, o acúmulo de cargas estáticas gera os raios!',
+      challenge: {
+        question: 'O que acontece quando esfregamos uma bexiga de borracha no cabelo seco?',
+        options: [
+          'Ela acumula cargas elétricas (eletrização por atrito) e passa a atrair os fios de cabelo.',
+          'Ela esquenta até derreter.',
+          'Ela vira um ímã de ferro.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'eletricidade_estatica',
+      type: 'B',
+      contentType: 'image',
+      content: '../images/fisica/fund_15b_raio_nuvem.svg',
+      label: 'Descarga de Raio na Tempestade',
+      conceptTitle: 'Eletricidade Estática!',
+      explanation:
+        'Eletricidade Estática! Ao esfregar um balão no cabelo, cargas elétricas passam de um para o outro e se atraem. Nas nuvens, o acúmulo de cargas estáticas gera os raios!'
+    },
+
+    // PAR 16: Roldanas e Polias
+    {
+      pairId: 'polia_roldana',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/fund_16a_roldana_caixa.svg',
+      label: 'Roldana Levantando Caixa com Corda',
+      conceptTitle: 'Roldanas e Polias!',
+      explanation:
+        'Roldanas (Polias)! Uma roda com corda muda a direção da força: puxamos a corda para baixo (usando nosso próprio peso) e a carga pesada sobe com facilidade!',
+      challenge: {
+        question: 'Qual é a grande vantagem de usar uma roldana no alto de um poço para puxar um balde cheio de água?',
+        options: [
+          'Podemos puxar a corda para baixo a favor do nosso corpo em vez de puxar para cima.',
+          'A água fica mais leve dentro do balde.',
+          'A corda fica mais curta.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'polia_roldana',
+      type: 'B',
+      contentType: 'image',
+      content: '../images/fisica/fund_16b_poco_roldana.svg',
+      label: 'Poço de Água com Roldana',
+      conceptTitle: 'Roldanas e Polias!',
+      explanation:
+        'Roldanas (Polias)! Uma roda com corda muda a direção da força: puxamos a corda para baixo (usando nosso próprio peso) e a carga pesada sobe com facilidade!'
+    },
+
+    // PAR 17: Condutores e Isolantes Térmicos
+    {
+      pairId: 'isolante_termico',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/fund_17a_panelas_colher.svg',
+      label: 'Colher de Madeira vs Metal na Panela',
+      conceptTitle: 'Condutores e Isolantes Térmicos!',
+      explanation:
+        'Isolantes Térmicos! Os metais conduzem calor muito rápido e esquentam a mão; já a madeira, o isopor e a garrafa térmica são isolantes que impedem a passagem do calor!',
+      challenge: {
+        question: 'Por que os cabos das panelas costumam ser feitos de plástico resistente ou madeira em vez de ferro?',
+        options: [
+          'Porque plástico e madeira são isolantes térmicos e não deixam o calor queimar nossa mão.',
+          'Porque o ferro derrete no fogão.',
+          'Para a panela cozinhar mais devagar.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'isolante_termico',
+      type: 'B',
+      contentType: 'image',
+      content: '../images/fisica/fund_17b_garrafa_termica.svg',
+      label: 'Garrafa Térmica Mantendo o Calor',
+      conceptTitle: 'Condutores e Isolantes Térmicos!',
+      explanation:
+        'Isolantes Térmicos! Os metais conduzem calor muito rápido e esquentam a mão; já a madeira, o isopor e a garrafa térmica são isolantes que impedem a passagem do calor!'
+    },
+
+    // PAR 18: Resistência do Ar
+    {
+      pairId: 'resistencia_ar',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/fund_18a_paraquedas_ar.svg',
+      label: 'Paraquedas Aberto Freando a Queda',
+      conceptTitle: 'Resistência do Ar!',
+      explanation:
+        'Resistência do Ar! Quanto maior a área aberta de um objeto caindo (como um paraquedas ou uma folha de papel aberta), mais o ar empurra para cima e freia a queda!',
+      challenge: {
+        question: 'Se soltarmos ao mesmo tempo uma folha de papel aberta e outra amassada em forma de bolinha, qual chega primeiro ao chão?',
+        options: [
+          'A bolinha amassada, pois tem menor área e sofre muito menos resistência do ar.',
+          'A folha aberta, porque é mais larga.',
+          'A folha aberta sobe para o teto.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'resistencia_ar',
+      type: 'B',
+      contentType: 'image',
+      content: '../images/fisica/fund_18b_folha_papel.svg',
+      label: 'Folha Aberta vs Bolinha de Papel',
+      conceptTitle: 'Resistência do Ar!',
+      explanation:
+        'Resistência do Ar! Quanto maior a área aberta de um objeto caindo (como um paraquedas ou uma folha de papel aberta), mais o ar empurra para cima e freia a queda!'
     }
   ],
 
   // ==========================================================================
-  // NÍVEL 2: ENSINO MÉDIO (13 a 17 anos) - 12 Pares (24 Cartas)
-  // Suporta Nível Médio (Desenhos + Fórmulas Pela Metade) e Nível Difícil (Só Fórmulas)
+  // NÍVEL 2: ENSINO MÉDIO (13 a 17 anos) - 18 Pares (36 Cartas)
   // ==========================================================================
   medio: [
     // PAR 1: Cinemática
@@ -775,12 +959,203 @@ const PHYSICS_GAME_DATA = {
       conceptTitle: 'Dinâmica do Movimento Circular!',
       explanation:
         'Força Centrípeta! Para manter qualquer corpo em trajetória circular de raio $R$ com velocidade $v$, é necessária uma força resultante apontando para o centro da curva: $F_{cp} = m v^2 / R$.'
+    },
+
+    // PAR 13: Queda Livre e Gravidade
+    {
+      pairId: 'queda_livre',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/med_13a_torre_queda.svg',
+      label: 'Esfera em Queda Livre da Torre',
+      conceptTitle: 'Queda Livre Gravitacional!',
+      explanation:
+        'Queda Livre! Sem resistência do ar, todos os corpos caem com a mesma aceleração da gravidade ($g \\approx 10\\text{ m/s}^2$), percorrendo uma altura $H = \\frac{1}{2}gt^2$.',
+      challenge: {
+        question: 'Um objeto é abandonado do repouso do alto de um prédio (g = 10 m/s²) e leva 3 segundos para atingir o solo. Qual é a altura H do prédio?',
+        options: ['45 m (pois H = 10 · 3² / 2)', '30 m', '90 m'],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'queda_livre',
+      type: 'B',
+      contentType: 'formula',
+      hybridImage: '../images/fisica/med_13b_cronometro_queda.svg',
+      halfFormulaHtml: 'H = g &middot; <span class="half-blank">t&sup2;</span> &divide; 2',
+      content: 'H = \\frac{g \\cdot t^2}{2}',
+      secondaryLatex: 'v = g \\cdot t',
+      fallbackHtml: '<strong>H = g&middot;t&sup2; / 2</strong>',
+      label: 'Altura e Tempo de Queda Livre',
+      conceptTitle: 'Queda Livre Gravitacional!',
+      explanation:
+        'Queda Livre! Sem resistência do ar, todos os corpos caem com a mesma aceleração da gravidade ($g \\approx 10\\text{ m/s}^2$), percorrendo uma altura $H = \\frac{1}{2}gt^2$.'
+    },
+
+    // PAR 14: Potência Elétrica
+    {
+      pairId: 'potencia_eletrica',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/med_14a_chuveiro_watts.svg',
+      label: 'Chuveiro Elétrico de Alta Potência',
+      conceptTitle: 'Potência Elétrica (Watts)!',
+      explanation:
+        'Potência Elétrica! A potência ($P$, medida em Watts) indica a rapidez do consumo de energia elétrica e é calculada multiplicando a tensão ($U$) pela corrente ($i$): $P = U \\cdot i$.',
+      challenge: {
+        question: 'Um chuveiro elétrico ligado em U = 220 V é percorrido por uma corrente i = 20 A. Qual é a sua potência elétrica P?',
+        options: ['4400 W (pois P = 220 × 20)', '11 W', '240 W'],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'potencia_eletrica',
+      type: 'B',
+      contentType: 'formula',
+      hybridImage: '../images/fisica/med_14b_medidor_watts.svg',
+      halfFormulaHtml: 'P = U &middot; <span class="half-blank">i</span> (Watts)',
+      content: 'P = U \\cdot i',
+      secondaryLatex: 'P = R \\cdot i^2 = \\frac{U^2}{R}',
+      fallbackHtml: '<strong>P = U &middot; i</strong>',
+      label: 'Potência: Tensão × Corrente',
+      conceptTitle: 'Potência Elétrica (Watts)!',
+      explanation:
+        'Potência Elétrica! A potência ($P$, medida em Watts) indica a rapidez do consumo de energia elétrica e é calculada multiplicando a tensão ($U$) pela corrente ($i$): $P = U \\cdot i$.'
+    },
+
+    // PAR 15: Impulso e Quantidade de Movimento
+    {
+      pairId: 'impulso_medio',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/med_15a_chute_bola.svg',
+      label: 'Chute Aplicando Impulso na Bola',
+      conceptTitle: 'Impulso & Quantidade de Movimento!',
+      explanation:
+        'Quantidade de Movimento ($Q = m \\cdot v$)! Quando aplicamos uma força $F$ durante um intervalo de tempo $\\Delta t$, geramos um Impulso ($I = F \\cdot \\Delta t$) que altera a quantidade de movimento da bola!',
+      challenge: {
+        question: 'Qual é a quantidade de movimento Q de uma bola de massa m = 0,5 kg que viaja a v = 20 m/s?',
+        options: ['10 kg·m/s (pois Q = 0,5 × 20)', '40 kg·m/s', '20,5 kg·m/s'],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'impulso_medio',
+      type: 'B',
+      contentType: 'formula',
+      hybridImage: '../images/fisica/med_15b_bola_momento.svg',
+      halfFormulaHtml: 'Q = m &middot; <span class="half-blank">v</span> • I = F&middot;&Delta;t',
+      content: 'Q = m \\cdot v',
+      secondaryLatex: 'I = F \\cdot \\Delta t = \\Delta Q',
+      fallbackHtml: '<strong>Q = m &middot; v</strong>',
+      label: 'Quantidade de Movimento (m·v)',
+      conceptTitle: 'Impulso & Quantidade de Movimento!',
+      explanation:
+        'Quantidade de Movimento ($Q = m \\cdot v$)! Quando aplicamos uma força $F$ durante um intervalo de tempo $\\Delta t$, geramos um Impulso ($I = F \\cdot \\Delta t$) que altera a quantidade de movimento da bola!'
+    },
+
+    // PAR 16: Força Elástica (Lei de Hooke)
+    {
+      pairId: 'forca_elastica',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/med_16a_mola_peso.svg',
+      label: 'Mola Esticada por um Bloco',
+      conceptTitle: 'Lei de Hooke (Força Elástica)!',
+      explanation:
+        'Lei de Hooke! A força elástica restauradora ($F_{el}$) de uma mola é diretamente proporcional à sua constante de rigidez ($k$) e à deformação sofrida ($\\Delta x$): $F_{el} = k \\cdot \\Delta x$.',
+      challenge: {
+        question: 'Uma mola de constante elástica k = 200 N/m é esticada em Δx = 0,1 m. Qual é a intensidade da força elástica?',
+        options: ['20 N (pois F = 200 × 0,1)', '2000 N', '2 N'],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'forca_elastica',
+      type: 'B',
+      contentType: 'formula',
+      hybridImage: '../images/fisica/med_16b_regua_mola.svg',
+      halfFormulaHtml: 'F<sub>el</sub> = k &middot; <span class="half-blank">&Delta;x</span>',
+      content: 'F_{el} = k \\cdot \\Delta x',
+      secondaryLatex: 'E_{pe} = \\frac{k \\cdot \\Delta x^2}{2}',
+      fallbackHtml: '<strong>F<sub>el</sub> = k &middot; &Delta;x</strong>',
+      label: 'Deformação Elástica Δx da Mola',
+      conceptTitle: 'Lei de Hooke (Força Elástica)!',
+      explanation:
+        'Lei de Hooke! A força elástica restauradora ($F_{el}$) de uma mola é diretamente proporcional à sua constante de rigidez ($k$) e à deformação sofrida ($\\Delta x$): $F_{el} = k \\cdot \\Delta x$.'
+    },
+
+    // PAR 17: Dilatação Linear dos Sólidos
+    {
+      pairId: 'dilatacao_linear',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/med_17a_barra_aquecida.svg',
+      label: 'Barra Metálica Aquecida (+ΔL)',
+      conceptTitle: 'Dilatação Térmica Linear!',
+      explanation:
+        'Dilatação Linear! O aumento de comprimento ($\\Delta L$) de uma barra aquecida é proporcional ao seu comprimento inicial ($L_0$), ao coeficiente do material ($\\alpha$) e à variação de temperatura ($\\Delta T$).',
+      challenge: {
+        question: 'Se aquecermos duas barras do mesmo metal com o mesmo ΔT, mas a Barra B tiver o dobro do comprimento inicial (2·L0) da Barra A, quanto a Barra B dilata?',
+        options: [
+          'O dobro da Barra A (pois ΔL é proporcional ao comprimento inicial L0).',
+          'A metade da Barra A.',
+          'Exatamente o mesmo tanto.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'dilatacao_linear',
+      type: 'B',
+      contentType: 'formula',
+      hybridImage: '../images/fisica/med_17b_delta_l.svg',
+      halfFormulaHtml: '&Delta;L = L<sub>0</sub> &middot; &alpha; &middot; <span class="half-blank">&Delta;T</span>',
+      content: '\\Delta L = L_0 \\cdot \\alpha \\cdot \\Delta T',
+      fallbackHtml: '<strong>&Delta;L = L<sub>0</sub> &middot; &alpha; &middot; &Delta;T</strong>',
+      label: 'Equação da Dilatação Linear',
+      conceptTitle: 'Dilatação Térmica Linear!',
+      explanation:
+        'Dilatação Linear! O aumento de comprimento ($\\Delta L$) de uma barra aquecida é proporcional ao seu comprimento inicial ($L_0$), ao coeficiente do material ($\\alpha$) e à variação de temperatura ($\\Delta T$).'
+    },
+
+    // PAR 18: Efeito Doppler
+    {
+      pairId: 'efeito_doppler',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/med_18a_ambulancia_doppler.svg',
+      label: 'Ambulância Comprimindo Ondas Sonoras',
+      conceptTitle: 'Efeito Doppler!',
+      explanation:
+        'Efeito Doppler! Quando uma fonte sonora (como uma ambulância) se aproxima de você, as frentes de onda se comprimem e o som parece mais agudo (maior frequência); ao se afastar, fica mais grave!',
+      challenge: {
+        question: 'Como você percebe o som da sirene de uma ambulância enquanto ela se aproxima rapidamente de você?',
+        options: [
+          'Mais agudo (frequência aparente maior que a emitida).',
+          'Mais grave (frequência menor).',
+          'Sem nenhuma alteração de frequência.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'efeito_doppler',
+      type: 'B',
+      contentType: 'formula',
+      hybridImage: '../images/fisica/med_18b_ondas_doppler.svg',
+      halfFormulaHtml: 'Aproxima &rarr; Som <span class="half-blank">+Agudo (+f)</span>',
+      content: 'f_{\\text{obs}} = f_0 \\frac{v \\pm v_{\\text{obs}}}{v \\mp v_{\\text{fonte}}}',
+      fallbackHtml: '<strong>f<sub>obs</sub> = f<sub>0</sub> (v &plusmn; v<sub>o</sub>) / (v &mp; v<sub>f</sub>)</strong>',
+      label: 'Som Grave (-f) vs Agudo (+f)',
+      conceptTitle: 'Efeito Doppler!',
+      explanation:
+        'Efeito Doppler! Quando uma fonte sonora (como uma ambulância) se aproxima de você, as frentes de onda se comprimem e o som parece mais agudo (maior frequência); ao se afastar, fica mais grave!'
     }
   ],
 
   // ==========================================================================
-  // NÍVEL 3: FÍSICA 1 - FACULDADE (Ensino Superior) - 12 Pares (24 Cartas)
-  // Suporta Nível Médio (Desenhos Práticos + Fórmulas Guiadas) e Nível Difícil (Cálculo Puro)
+  // NÍVEL 3: FÍSICA 1 - FACULDADE (Ensino Superior) - 18 Pares (36 Cartas)
   // ==========================================================================
   faculdade: [
     // PAR 1: Cinemática Vetorial Diferencial
@@ -1185,8 +1560,246 @@ const PHYSICS_GAME_DATA = {
       conceptTitle: 'Oscilador Harmônico Amortecido (EDO)!',
       explanation:
         'MHS Amortecido! Na presença de uma força viscosa proporcional à velocidade ($F_a = -b\\dot{x}$), a EDO ganha o termo dissipativo $b(dx/dt)$ e a amplitude decai exponencialmente no tempo segundo $A(t) = A_0 e^{-bt/2m}$.'
+    },
+
+    // PAR 13: Lançamento Oblíquo de Projéteis
+    {
+      pairId: 'lancamento_projetil',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/uni_13a_parabola_projetil.svg',
+      label: 'Parábola Balística (v0x e v0y)',
+      conceptTitle: 'Lançamento Oblíquo Vetorial!',
+      explanation:
+        'Movimento de Projétil 2D! Sem resistência do ar, o movimento horizontal é uniforme ($v_x = v_0\\cos\\theta_0$) e o vertical é uniformemente variado ($a_y = -g$), atingindo alcance máximo em $\\theta_0 = 45^\\circ$!',
+      challenge: {
+        question: 'No ponto mais alto (vértice) da trajetória parabólica de um projétil lançado obliquamente, quanto valem suas velocidades vertical (vy) e horizontal (vx)?',
+        options: [
+          'vy = 0 e vx = v0 · cos(θ0) (constante).',
+          'Ambas são zero.',
+          'vy é máxima e vx = 0.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'lancamento_projetil',
+      type: 'B',
+      contentType: 'formula',
+      hybridImage: '../images/fisica/uni_13b_alcance_angulo.svg',
+      halfFormulaHtml: 'Alcance R = v<sub>0</sub>&sup2;&middot;sen(2&theta;) &divide; <span class="half-blank">g</span>',
+      content: 'R = \\frac{v_0^2 \\sin(2\\theta_0)}{g}',
+      secondaryLatex: 'H_{\\max} = \\frac{v_0^2 \\sin^2\\theta_0}{2g}',
+      fallbackHtml: '<strong>R = v<sub>0</sub>&sup2;&middot;sen(2&theta;<sub>0</sub>) / g</strong>',
+      label: 'Alcance Máximo em 45°',
+      conceptTitle: 'Lançamento Oblíquo Vetorial!',
+      explanation:
+        'Movimento de Projétil 2D! Sem resistência do ar, o movimento horizontal é uniforme ($v_x = v_0\\cos\\theta_0$) e o vertical é uniformemente variado ($a_y = -g$), atingindo alcance máximo em $\\theta_0 = 45^\\circ$!'
+    },
+
+    // PAR 14: Potência Instantânea (Produto Escalar)
+    {
+      pairId: 'potencia_instantanea',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/uni_14a_motor_tracao.svg',
+      label: 'Força F Tracionando Bloco com Velocidade v',
+      conceptTitle: 'Potência Instantânea & Produto Escalar!',
+      explanation:
+        'Potência Mecânica Instantânea! A taxa temporal de realização de trabalho ($dW/dt$) é o produto escalar entre o vetor força e o vetor velocidade instantânea: $P = \\vec{F} \\cdot \\vec{v} = F v \\cos\\theta$.',
+      challenge: {
+        question: 'Qual é a potência instantânea realizada pela força centrípeta (que é sempre perpendicular à velocidade v, θ = 90°)?',
+        options: [
+          'Zero, pois cos(90°) = 0 e o produto escalar F · v é nulo.',
+          'Máxima e positiva.',
+          'Negativa.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'potencia_instantanea',
+      type: 'B',
+      contentType: 'formula',
+      hybridImage: '../images/fisica/uni_14b_produto_escalar.svg',
+      halfFormulaHtml: 'P = dW/dt = F&#8407; &middot; <span class="half-blank">v&#8407;</span>',
+      content: 'P(t) = \\frac{dW}{dt} = \\vec{F} \\cdot \\vec{v}',
+      secondaryLatex: 'P = F \\cdot v \\cdot \\cos\\theta',
+      fallbackHtml: '<strong>P = dW/dt = F&#8407; &middot; v&#8407;</strong>',
+      label: 'Produto Escalar: Potência F · v',
+      conceptTitle: 'Potência Instantânea & Produto Escalar!',
+      explanation:
+        'Potência Mecânica Instantânea! A taxa temporal de realização de trabalho ($dW/dt$) é o produto escalar entre o vetor força e o vetor velocidade instantânea: $P = \\vec{F} \\cdot \\vec{v} = F v \\cos\\theta$.'
+    },
+
+    // PAR 15: Pêndulo Simples (Pequenos Ângulos)
+    {
+      pairId: 'pendulo_simples',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/uni_15a_pendulo_forca.svg',
+      label: 'Pêndulo de Comprimento L (-mg sen θ)',
+      conceptTitle: 'Pêndulo Simples & Pequenas Oscilações!',
+      explanation:
+        'Pêndulo Simples! Para pequenos ângulos ($\\sin\\theta \\approx \\theta$ em radianos), o pêndulo executa MHS com período $T = 2\\pi\\sqrt{L/g}$, que independe da massa pendurada!',
+      challenge: {
+        question: 'Se dobrarmos a massa da esfera presa na ponta de um pêndulo simples de comprimento L, o que acontece com o período T de pequenas oscilações?',
+        options: [
+          'Permanece exatamente o mesmo, pois T = 2π√(L/g) não depende da massa.',
+          'Dobra de valor.',
+          'Cai pela metade.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'pendulo_simples',
+      type: 'B',
+      contentType: 'formula',
+      hybridImage: '../images/fisica/uni_15b_periodo_pendulo.svg',
+      halfFormulaHtml: 'T = 2&pi; &middot; &radic;(<span class="half-blank">L / g</span>)',
+      content: '\\frac{d^2\\theta}{dt^2} + \\frac{g}{L}\\theta = 0',
+      secondaryLatex: 'T = 2\\pi\\sqrt{\\frac{L}{g}}',
+      fallbackHtml: '<strong>T = 2&pi;&radic;(L / g)</strong>',
+      label: 'Período do Pêndulo Simples',
+      conceptTitle: 'Pêndulo Simples & Pequenas Oscilações!',
+      explanation:
+        'Pêndulo Simples! Para pequenos ângulos ($\\sin\\theta \\approx \\theta$ em radianos), o pêndulo executa MHS com período $T = 2\\pi\\sqrt{L/g}$, que independe da massa pendurada!'
+    },
+
+    // PAR 16: Velocidade de Escape Gravitacional
+    {
+      pairId: 'velocidade_escape',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/uni_16a_foguete_escape.svg',
+      label: 'Foguete Vencendo Poço Gravitacional',
+      conceptTitle: 'Velocidade de Escape Planetária!',
+      explanation:
+        'Velocidade de Escape! Igualando a energia mecânica total a zero no infinito ($\\frac{1}{2}mv^2 - G\\frac{Mm}{R} = 0$), obtemos a velocidade mínima para escapar da gravidade de um astro: $v_{\\text{esc}} = \\sqrt{2GM/R}$.',
+      challenge: {
+        question: 'A velocidade de escape da superfície de um planeta de massa M e raio R depende da massa m do foguete lançado?',
+        options: [
+          'Não! A massa m do foguete se cancela na conservação de energia.',
+          'Sim, foguetes mais pesados precisam de maior velocidade de escape.',
+          'Depende apenas da temperatura.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'velocidade_escape',
+      type: 'B',
+      contentType: 'formula',
+      hybridImage: '../images/fisica/uni_16b_formula_escape.svg',
+      halfFormulaHtml: 'v<sub>esc</sub> = &radic;(<span class="half-blank">2GM / R</span>)',
+      content: 'v_{\\text{esc}} = \\sqrt{\\frac{2GM}{R}}',
+      secondaryLatex: 'E_{\\text{mec}} = K + U_G = 0',
+      fallbackHtml: '<strong>v<sub>esc</sub> = &radic;(2GM / R)</strong>',
+      label: 'Velocidade de Escape √(2GM/R)',
+      conceptTitle: 'Velocidade de Escape Planetária!',
+      explanation:
+        'Velocidade de Escape! Igualando a energia mecânica total a zero no infinito ($\\frac{1}{2}mv^2 - G\\frac{Mm}{R} = 0$), obtemos a velocidade mínima para escapar da gravidade de um astro: $v_{\\text{esc}} = \\sqrt{2GM/R}$.'
+    },
+
+    // PAR 17: Equilíbrio Estático de Corpo Rígido
+    {
+      pairId: 'equilibrio_estatico',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/uni_17a_viga_equilibrio.svg',
+      label: 'Viga Horizontal em Equilíbrio Estático',
+      conceptTitle: 'Equilíbrio Estático de Corpo Rígido!',
+      explanation:
+        'Equilíbrio Estático! Para que um corpo rígido extenso permaneça em equilíbrio estático completo, duas condições vetoriais precisam ser satisfeitas simultaneamente: força resultante nula ($\\sum \\vec{F} = \\vec{0}$) e torque resultante nulo ($\\sum \\vec{\\tau} = \\vec{0}$).',
+      challenge: {
+        question: 'Quais são as duas condições necessárias para o equilíbrio estático completo de uma ponte ou viga rígida?',
+        options: [
+          'Soma vetorial das forças igual a zero (ΣF = 0) e soma dos torques igual a zero (Στ = 0).',
+          'Apenas a velocidade ser constante.',
+          'Apenas a massa ser pequena.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'equilibrio_estatico',
+      type: 'B',
+      contentType: 'formula',
+      hybridImage: '../images/fisica/uni_17b_soma_torques.svg',
+      halfFormulaHtml: '&Sigma;F&#8407; = 0 e &Sigma;<span class="half-blank">&tau;&#8407;</span> = 0',
+      content: '\\sum \\vec{F}_{\\text{ext}} = \\vec{0}',
+      secondaryLatex: '\\sum \\vec{\\tau}_{\\text{ext}} = \\vec{0}',
+      fallbackHtml: '<strong>&Sigma;F&#8407; = 0 e &Sigma;&tau;&#8407; = 0</strong>',
+      label: 'Força e Torque Resultantes Nulos',
+      conceptTitle: 'Equilíbrio Estático de Corpo Rígido!',
+      explanation:
+        'Equilíbrio Estático! Para que um corpo rígido extenso permaneça em equilíbrio estático completo, duas condições vetoriais precisam ser satisfeitas simultaneamente: força resultante nula ($\\sum \\vec{F} = \\vec{0}$) e torque resultante nulo ($\\sum \\vec{\\tau} = \\vec{0}$).'
+    },
+
+    // PAR 18: Referencial Girante e Força de Coriolis
+    {
+      pairId: 'referencial_girante',
+      type: 'A',
+      contentType: 'image',
+      content: '../images/fisica/uni_18a_disco_coriolis.svg',
+      label: 'Desvio de Trajetória em Plataforma Girante',
+      conceptTitle: 'Referencial Girante & Efeito Coriolis!',
+      explanation:
+        'Força de Coriolis! Em um referencial não-inercial que gira com velocidade angular $\\vec{\\Omega}$ (como a Terra), corpos em movimento com velocidade $\\vec{v}\'$ sofrem um desvio lateral dado por $\\vec{F}_{\\text{cor}} = -2m(\\vec{\\Omega} \\times \\vec{v}\')$, responsável pelo giro dos ciclones!',
+      challenge: {
+        question: 'Qual fenômeno geofísico na atmosfera da Terra é diretamente causado pela Força de Coriolis devido à rotação do planeta?',
+        options: [
+          'O sentido de rotação dos furacões e ciclones nos hemisférios Norte e Sul.',
+          'As fases da Lua.',
+          'O aquecimento solar.'
+        ],
+        answerIndex: 0
+      }
+    },
+    {
+      pairId: 'referencial_girante',
+      type: 'B',
+      contentType: 'formula',
+      hybridImage: '../images/fisica/uni_18b_vetor_coriolis.svg',
+      halfFormulaHtml: 'F<sub>Coriolis</sub> = &minus;2m(&Omega;&#8407; &times; <span class="half-blank">v&#8407;</span>)',
+      content: '\\vec{F}_{\\text{cor}} = -2m(\\vec{\\Omega} \\times \\vec{v}\')',
+      secondaryLatex: '\\vec{F}_{\\text{cf}} = -m\\vec{\\Omega} \\times (\\vec{\\Omega} \\times \\vec{r})',
+      fallbackHtml: '<strong>F&#8407;<sub>cor</sub> = &minus;2m(&Omega;&#8407; &times; v&#8407;)</strong>',
+      label: 'Efeito Coriolis em Referencial Girante',
+      conceptTitle: 'Referencial Girante & Efeito Coriolis!',
+      explanation:
+        'Força de Coriolis! Em um referencial não-inercial que gira com velocidade angular $\\vec{\\Omega}$ (como a Terra), corpos em movimento com velocidade $\\vec{v}\'$ sofrem um desvio lateral dado por $\\vec{F}_{\\text{cor}} = -2m(\\vec{\\Omega} \\times \\vec{v}\')$, responsável pelo giro dos ciclones!'
     }
   ]
+};
+
+/**
+ * ============================================================================
+ * DECKS EXCLUSIVOS POR MODO DE JOGO (CADA UM DOS 6 MODOS TEM CARTAS DIFERENTES!)
+ * ============================================================================
+ * Cada array contém a ordem dos índices de pares (de 0 a 17) priorizados naquele
+ * modo de jogo, garantindo que ao trocar entre os 6 modos a maioria das cartas
+ * do tabuleiro seja diferente!
+ */
+const MODE_PAIR_DECKS = {
+  // Modo 1: Duelo 1v1 (Só Pares) -> Pares 1, 2, 3, 7, 8, 9, 13, 14, 15, 16, 4, 10
+  duelo_pares: [0, 1, 2, 6, 7, 8, 12, 13, 14, 15, 3, 9, 4, 5, 10, 11, 16, 17],
+
+  // Modo 2: Duelo 1v1 + Quiz -> Pares 4, 5, 6, 10, 11, 12, 13, 17, 18, 1, 2, 7
+  duelo: [3, 4, 5, 9, 10, 11, 12, 16, 17, 0, 1, 6, 2, 7, 8, 13, 14, 15],
+
+  // Modo 3: Solo (Só Pares) -> Pares 2, 5, 7, 10, 12, 14, 15, 16, 17, 18, 3, 8
+  solo_pares: [1, 4, 6, 9, 11, 13, 14, 15, 16, 17, 2, 7, 0, 3, 5, 8, 10, 12],
+
+  // Modo 4: Solo (Desafio + Quiz) -> Pares 1, 3, 6, 8, 9, 11, 13, 14, 17, 18, 5, 15
+  desafio: [0, 2, 5, 7, 8, 10, 12, 13, 16, 17, 4, 14, 1, 3, 6, 9, 11, 15],
+
+  // Modo 5: Solo (Sobrevivência 5 Vidas) -> Pares 3, 4, 7, 8, 11, 12, 15, 16, 17, 18, 6, 9
+  sobrevivencia: [2, 3, 6, 7, 10, 11, 14, 15, 16, 17, 5, 8, 0, 1, 4, 9, 12, 13],
+
+  // Modo 6: Solo (Estudo Livre) -> Pares 1, 2, 4, 5, 6, 9, 10, 13, 15, 18, 12, 16
+  exploracao: [0, 1, 3, 4, 5, 8, 9, 12, 14, 17, 11, 15, 2, 6, 7, 10, 13, 16]
 };
 
 // ============================================================================
@@ -1277,6 +1890,8 @@ let totalPairsInLevel = 12;
 
 let primeiraCarta = null;
 let segundaCarta = null;
+let pendingPairCards = null; // Guarda [carta1, carta2] enquanto aguarda validação do Quiz
+let lastQuizOutcome = null; // 'correct' | 'wrong' | null
 let lockBoard = false;
 let matchedPairsCount = 0;
 
@@ -1287,7 +1902,6 @@ const getBaseDatasetKey = (lvlKey) => {
   return 'fundamental';
 };
 
-// Verifica se está na dificuldade Média (Visual + Fórmulas Pela Metade)
 const isVisualGuidedDifficulty = () =>
   currentLevel === 'medio' || currentLevel === 'faculdade';
 
@@ -1352,12 +1966,6 @@ const renderLatexString = (latexStr, fallbackHtml = '') => {
   return fallbackHtml || latexStr;
 };
 
-/**
- * Constrói o visual central da carta:
- * - Se for Nível Médio de 13-17 ('medio') ou Física 1 ('faculdade') e a Carta B tiver hybridImage,
- *   exibe o Desenho Físico Explicativo + a Fórmula Pela Metade com destaque colorido!
- * - Se for Nível Difícil ('medio_dificil' ou 'faculdade_dificil'), exibe somente a Fórmula KaTeX completa!
- */
 const buildCardVisualHTML = (cardData, forceFullFormula = false) => {
   if (cardData.contentType === 'formula') {
     if (!forceFullFormula && isVisualGuidedDifficulty() && cardData.hybridImage) {
@@ -1496,7 +2104,7 @@ const updateHUD = () => {
 };
 
 // ============================================================================
-// TROCA DE TURNO NO MODO DUELO 2 JOGADORES (ERROU OU 30s ESGOTADOS)
+// TROCA DE TURNO NO MODO DUELO 2 JOGADORES (ERROU PAR, ERROU QUIZ OU 30s ESGOTADOS)
 // ============================================================================
 const switchDuelTurn = (reason = 'miss') => {
   const previousPlayer = duelPlayers[activeDuelPlayer].name;
@@ -1518,6 +2126,11 @@ const switchDuelTurn = (reason = 'miss') => {
   if (reason === 'timeout') {
     showTurnToast(
       `⏰ Os 30s de ${previousPlayer} acabaram! Passou a vez para ${nextPlayer} (30s)!`,
+      'warn'
+    );
+  } else if (reason === 'quiz_miss') {
+    showTurnToast(
+      `❌ ${previousPlayer} errou o Quiz e o par fechou! Agora é a vez de ${nextPlayer} (30s)!`,
       'warn'
     );
   } else {
@@ -1646,7 +2259,41 @@ const useMagnetPowerup = () => {
 };
 
 // ============================================================================
-// MODAL EDUCATIVO + DESAFIO DE LABORATÓRIO (QUIZ SÓ APARECE NOS MODOS COM QUIZ!)
+// CONQUISTA DEFINITIVA DO PAR (CHAMADA IMEDIATAMENTE NOS MODOS SEM QUIZ,
+// OU SOMENTE APÓS ACERTAR A PERGUNTA NOS MODOS COM QUIZ!)
+// ============================================================================
+const confirmPairConquered = (cardEl1, cardEl2) => {
+  cardEl1.firstChild.classList.add('acertouCarta');
+  cardEl2.firstChild.classList.add('acertouCarta');
+  cardEl1.classList.add('matched-card');
+  cardEl2.classList.add('matched-card');
+
+  if (isDuelMode()) {
+    const ownerBadge = activeDuelPlayer === 1 ? '✓ J1' : '✓ J2';
+    const ownerClass = activeDuelPlayer === 1 ? 'matched-by-p1' : 'matched-by-p2';
+    cardEl1.setAttribute('data-owner-badge', ownerBadge);
+    cardEl2.setAttribute('data-owner-badge', ownerBadge);
+    cardEl1.classList.add(ownerClass);
+    cardEl2.classList.add(ownerClass);
+
+    duelPlayers[activeDuelPlayer].pairs += 1;
+    duelPlayers[activeDuelPlayer].xp += 100;
+  } else {
+    cardEl1.setAttribute('data-owner-badge', '✓');
+    cardEl2.setAttribute('data-owner-badge', '✓');
+  }
+
+  matchedPairsCount += 1;
+  xpScore += 100 * comboMultiplier;
+  comboMultiplier += 1;
+  if (comboMultiplier > maxCombo) maxCombo = comboMultiplier;
+  updateHUD();
+};
+
+// ============================================================================
+// MODAL EDUCATIVO + DESAFIO DE LABORATÓRIO
+// Regra: Nos modos COM QUIZ, se o usuário errar o Quiz, as duas cartas fecham
+// de novo até ele acertar!
 // ============================================================================
 const renderChallengeQuiz = (challengeObj) => {
   if (!isQuizEnabled() || !challengeObj || !modalChallengeBox) {
@@ -1657,36 +2304,55 @@ const renderChallengeQuiz = (challengeObj) => {
   modalChallengeBox.classList.remove('hidden');
   if (challengeBadgeTitle) {
     if (isDuelMode()) {
-      challengeBadgeTitle.textContent = `⚡ Desafio Bônus para ${duelPlayers[activeDuelPlayer].name} (+150 XP de Desempate)`;
+      challengeBadgeTitle.textContent = `⚡ Validação do Par para ${duelPlayers[activeDuelPlayer].name} (Acerte para conquistar o par!)`;
     } else {
-      challengeBadgeTitle.textContent = '⚡ Desafio de Laboratório (+150 XP & Bônus)';
+      challengeBadgeTitle.textContent =
+        '⚡ Validação do Par: Acerte o Quiz para manter o par aberto!';
     }
   }
+
+  // Bloqueia o botão Continuar até que o jogador responda o Quiz!
+  btnContinueGame.disabled = true;
+  btnContinueGame.textContent = '🔒 Responda o Quiz acima para validar o par';
 
   challengeQuestionEl.textContent = challengeObj.question;
   challengeFeedbackEl.classList.add('hidden');
   challengeFeedbackEl.className = 'challenge-feedback hidden';
   challengeOptionsEl.innerHTML = '';
 
-  challengeObj.options.forEach((optText, idx) => {
+  // Embaralha a ordem das alternativas para que se o jogador errar e abrir de novo, precise ler e acertar!
+  const indexedOptions = challengeObj.options.map((text, originalIdx) => ({
+    text,
+    isCorrect: originalIdx === challengeObj.answerIndex
+  }));
+  const shuffledOptions = shuffleCards(indexedOptions);
+
+  shuffledOptions.forEach((optItem) => {
     const btn = createElement('button', 'challenge-opt-btn');
     btn.type = 'button';
-    btn.textContent = optText;
+    btn.textContent = optItem.text;
 
     btn.addEventListener('click', () => {
       const allBtns = challengeOptionsEl.querySelectorAll('.challenge-opt-btn');
       allBtns.forEach((b) => (b.disabled = true));
 
-      if (idx === challengeObj.answerIndex) {
+      if (optItem.isCorrect) {
+        // ACERTOU O QUIZ -> Conquista o par definitivamente!
         btn.classList.add('correct');
+        lastQuizOutcome = 'correct';
+
+        if (pendingPairCards) {
+          confirmPairConquered(pendingPairCards[0], pendingPairCards[1]);
+        }
+
         xpScore += 150;
         challengesSolved += 1;
 
-        let bonusText = '✅ Resposta Correta! +150 XP Bônus!';
+        let bonusText = '✅ Resposta Correta! Par validado e conquistado (+150 XP)!';
         if (isDuelMode()) {
           duelPlayers[activeDuelPlayer].xp += 150;
           duelPlayers[activeDuelPlayer].quizzes += 1;
-          bonusText = `✅ Boa, ${duelPlayers[activeDuelPlayer].name}! +150 XP Bônus no placar do Duelo!`;
+          bonusText = `✅ Boa, ${duelPlayers[activeDuelPlayer].name}! Par conquistado e +150 XP no Duelo!`;
         } else if (currentMode === 'desafio') {
           remainingSeconds += 12;
           timer.innerHTML = String(remainingSeconds).padStart(2, '0');
@@ -1700,13 +2366,35 @@ const renderChallengeQuiz = (challengeObj) => {
         challengeFeedbackEl.classList.remove('hidden');
         challengeFeedbackEl.classList.add('ok');
         updateHUD();
+
+        btnContinueGame.disabled = false;
+        if (matchedPairsCount === totalPairsInLevel) {
+          btnContinueGame.textContent = isDuelMode()
+            ? 'Ver Vencedor do Duelo 🏆'
+            : 'Ver Certificado & Resultado 🏆';
+        } else if (isDuelMode()) {
+          btnContinueGame.textContent = `Continuar (Mais 30s para ${duelPlayers[activeDuelPlayer].name}) ▶`;
+        } else {
+          btnContinueGame.textContent = 'Continuar Jogando ▶';
+        }
       } else {
+        // ERROU O QUIZ -> As duas cartas vão fechar novamente até ele acertar!
         btn.classList.add('wrong');
-        allBtns[challengeObj.answerIndex].classList.add('correct');
+        lastQuizOutcome = 'wrong';
+        comboMultiplier = 1;
+
+        if (currentMode === 'sobrevivencia') {
+          livesRemaining = Math.max(0, livesRemaining - 1);
+        }
+        updateHUD();
+
         challengeFeedbackEl.textContent =
-          '❌ Quase! A alternativa destacada em verde é a correta.';
+          '❌ Resposta incorreta! As duas cartas vão fechar de novo — encontre-as novamente e acerte o Quiz para conquistar o par!';
         challengeFeedbackEl.classList.remove('hidden');
         challengeFeedbackEl.classList.add('err');
+
+        btnContinueGame.disabled = false;
+        btnContinueGame.textContent = '🔄 Fechar Cartas e Tentar Novamente';
       }
     });
 
@@ -1716,6 +2404,7 @@ const renderChallengeQuiz = (challengeObj) => {
 
 const openEducationalModal = (cardObj1, cardObj2) => {
   pauseTimer();
+  lastQuizOutcome = null;
 
   const cardA = cardObj1.type === 'A' ? cardObj1 : cardObj2;
   const cardB = cardObj1.type === 'B' ? cardObj1 : cardObj2;
@@ -1733,24 +2422,54 @@ const openEducationalModal = (cardObj1, cardObj2) => {
 
   modalExplanationText.innerHTML = formatExplanationWithMath(cardA.explanation);
 
-  renderChallengeQuiz(cardA.challenge);
-
-  if (matchedPairsCount === totalPairsInLevel) {
-    btnContinueGame.textContent = isDuelMode()
-      ? 'Ver Vencedor do Duelo 🏆'
-      : 'Ver Certificado & Resultado 🏆';
-  } else if (isDuelMode()) {
-    btnContinueGame.textContent = `Continuar (Mais 30s para ${duelPlayers[activeDuelPlayer].name}) ▶`;
+  if (isQuizEnabled() && cardA.challenge) {
+    renderChallengeQuiz(cardA.challenge);
   } else {
-    btnContinueGame.textContent = 'Continuar Jogando ▶';
+    if (modalChallengeBox) modalChallengeBox.classList.add('hidden');
+    btnContinueGame.disabled = false;
+    if (matchedPairsCount === totalPairsInLevel) {
+      btnContinueGame.textContent = isDuelMode()
+        ? 'Ver Vencedor do Duelo 🏆'
+        : 'Ver Certificado & Resultado 🏆';
+    } else if (isDuelMode()) {
+      btnContinueGame.textContent = `Continuar (Mais 30s para ${duelPlayers[activeDuelPlayer].name}) ▶`;
+    } else {
+      btnContinueGame.textContent = 'Continuar Jogando ▶';
+    }
   }
 
   eduModal.classList.remove('hidden');
-  btnContinueGame.focus();
 };
 
 const closeEducationalModal = () => {
+  if (btnContinueGame && btnContinueGame.disabled) return;
+
   eduModal.classList.add('hidden');
+
+  // Se era um modo com Quiz e o jogador ERROU o Quiz: fecha as duas cartas novamente!
+  if (isQuizEnabled() && lastQuizOutcome === 'wrong') {
+    if (pendingPairCards) {
+      const [c1, c2] = pendingPairCards;
+      c1.classList.remove('revela-carta', 'matched-card', 'matched-by-p1', 'matched-by-p2');
+      c2.classList.remove('revela-carta', 'matched-card', 'matched-by-p1', 'matched-by-p2');
+      if (c1.firstChild) c1.firstChild.classList.remove('acertouCarta');
+      if (c2.firstChild) c2.firstChild.classList.remove('acertouCarta');
+      pendingPairCards = null;
+    }
+
+    if (currentMode === 'sobrevivencia' && livesRemaining === 0) {
+      openEndGameModal(false, 'Suas 5 vidas do Modo Sobrevivência acabaram!');
+      return;
+    }
+
+    if (isDuelMode()) {
+      switchDuelTurn('quiz_miss');
+    }
+    resumeTimer();
+    return;
+  }
+
+  pendingPairCards = null;
 
   if (matchedPairsCount === totalPairsInLevel) {
     openEndGameModal(true);
@@ -1759,7 +2478,7 @@ const closeEducationalModal = () => {
       duelTurnSeconds = DUEL_TURN_LIMIT;
       updateDuelClockUI();
       showTurnToast(
-        `🔥 ${duelPlayers[activeDuelPlayer].name} acertou o par e continua jogando (30s)!`,
+        `🔥 ${duelPlayers[activeDuelPlayer].name} conquistou o par e continua jogando (30s)!`,
         'success'
       );
     }
@@ -1903,38 +2622,23 @@ const confiraCartas = () => {
   const isComplementaryMatch = pairId1 === pairId2 && type1 !== type2;
 
   if (isComplementaryMatch) {
-    primeiraCarta.firstChild.classList.add('acertouCarta');
-    segundaCarta.firstChild.classList.add('acertouCarta');
-    primeiraCarta.classList.add('matched-card');
-    segundaCarta.classList.add('matched-card');
-
-    if (isDuelMode()) {
-      const ownerBadge = activeDuelPlayer === 1 ? '✓ J1' : '✓ J2';
-      const ownerClass = activeDuelPlayer === 1 ? 'matched-by-p1' : 'matched-by-p2';
-      primeiraCarta.setAttribute('data-owner-badge', ownerBadge);
-      segundaCarta.setAttribute('data-owner-badge', ownerBadge);
-      primeiraCarta.classList.add(ownerClass);
-      segundaCarta.classList.add(ownerClass);
-
-      duelPlayers[activeDuelPlayer].pairs += 1;
-      duelPlayers[activeDuelPlayer].xp += 100;
-    } else {
-      primeiraCarta.setAttribute('data-owner-badge', '✓');
-      segundaCarta.setAttribute('data-owner-badge', '✓');
-    }
-
-    const cardData1 = primeiraCarta._cardData;
-    const cardData2 = segundaCarta._cardData;
-
-    matchedPairsCount += 1;
-    xpScore += 100 * comboMultiplier;
-    comboMultiplier += 1;
-    if (comboMultiplier > maxCombo) maxCombo = comboMultiplier;
-    updateHUD();
+    const cardEl1 = primeiraCarta;
+    const cardEl2 = segundaCarta;
+    const cardData1 = cardEl1._cardData;
+    const cardData2 = cardEl2._cardData;
 
     primeiraCarta = null;
     segundaCarta = null;
     lockBoard = false;
+
+    if (isQuizEnabled()) {
+      // Nos modos COM QUIZ, o par só é conquistado se acertar a pergunta no modal!
+      pendingPairCards = [cardEl1, cardEl2];
+    } else {
+      // Nos modos SÓ PARES, conquista imediatamente!
+      pendingPairCards = null;
+      confirmPairConquered(cardEl1, cardEl2);
+    }
 
     setTimeout(() => {
       openEducationalModal(cardData1, cardData2);
@@ -2023,7 +2727,7 @@ const createCard = (cardData) => {
 };
 
 // ============================================================================
-// INICIALIZAÇÃO E CARREGAMENTO DO NÍVEL, MODO E QUANTIDADE DE CARTAS
+// SELEÇÃO DO DECK DE CARTAS ESPECÍFICO DE CADA UM DOS 6 MODOS DE JOGO
 // ============================================================================
 const shuffleCards = (array) => {
   const copy = [...array];
@@ -2032,6 +2736,33 @@ const shuffleCards = (array) => {
     [copy[i], copy[j]] = [copy[j], copy[i]];
   }
   return copy;
+};
+
+/**
+ * Monta o deck de cartas específico para o Modo de Jogo atual:
+ * - Agrupa os 18 pares disponíveis naquele nível
+ * - Seleciona os pares na ordem exclusiva do Modo (MODE_PAIR_DECKS[modeKey]),
+ *   garantindo que cada um dos 6 modos tenha cartas majoritariamente diferentes!
+ */
+const selectCardsForMode = (allLevelCards, modeKey, pairsLimit) => {
+  const totalAvailablePairs = Math.floor(allLevelCards.length / 2);
+  const pairsList = [];
+  for (let i = 0; i < totalAvailablePairs; i += 1) {
+    pairsList.push([allLevelCards[i * 2], allLevelCards[i * 2 + 1]]);
+  }
+
+  const modeOrder = MODE_PAIR_DECKS[modeKey] || MODE_PAIR_DECKS.duelo_pares;
+  const chosenCards = [];
+  let count = 0;
+
+  for (let idx of modeOrder) {
+    if (idx < pairsList.length && count < pairsLimit) {
+      chosenCards.push(pairsList[idx][0], pairsList[idx][1]);
+      count += 1;
+    }
+  }
+
+  return chosenCards;
 };
 
 const loadGame = (
@@ -2078,9 +2809,11 @@ const loadGame = (
 
   const baseDatasetKey = getBaseDatasetKey(currentLevel);
   const allLevelCards = PHYSICS_GAME_DATA[baseDatasetKey];
-  const maxAvailablePairs = allLevelCards.length / 2;
+  const maxAvailablePairs = Math.floor(allLevelCards.length / 2);
   totalPairsInLevel = Math.min(requestedPairsCount, maxAvailablePairs);
-  const activeCards = allLevelCards.slice(0, totalPairsInLevel * 2);
+
+  // Seleciona o conjunto de cartas exclusivo deste Modo de Jogo!
+  const activeCards = selectCardsForMode(allLevelCards, currentMode, totalPairsInLevel);
 
   if (totalPairsInLevel <= 6) {
     grid.classList.add('grid-12');
@@ -2092,6 +2825,8 @@ const loadGame = (
   grid.innerHTML = '';
   primeiraCarta = null;
   segundaCarta = null;
+  pendingPairCards = null;
+  lastQuizOutcome = null;
   lockBoard = false;
   matchedPairsCount = 0;
   xpScore = 0;
@@ -2137,9 +2872,11 @@ const loadGame = (
 
   if (isDuelMode()) {
     const modeDesc =
-      currentMode === 'duelo_pares' ? 'Modo Só Pares' : 'Modo Pares + Quiz';
+      currentMode === 'duelo_pares'
+        ? 'Modo Só Pares'
+        : 'Modo Pares + Quiz (Errou o Quiz, a carta fecha!)';
     showTurnToast(
-      `⚔️ Duelo (${modeDesc}) iniciado! Vez de ${duelPlayers[1].name} — você tem 30s para encontrar um par!`,
+      `⚔️ Duelo (${modeDesc}) iniciado! Vez de ${duelPlayers[1].name} — 30s para jogar!`,
       'default'
     );
     startTimer();
@@ -2219,7 +2956,12 @@ if (btnSwitchLevel) {
 }
 
 window.addEventListener('keydown', (e) => {
-  if (!eduModal.classList.contains('hidden') && e.key === 'Enter') {
+  if (
+    !eduModal.classList.contains('hidden') &&
+    e.key === 'Enter' &&
+    btnContinueGame &&
+    !btnContinueGame.disabled
+  ) {
     e.preventDefault();
     closeEducationalModal();
   }

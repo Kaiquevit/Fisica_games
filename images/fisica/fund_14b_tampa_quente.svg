@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Glass Jar with Metal Lid expanding under warm water -->
+  <rect x="95" y="95" width="110" height="115" rx="14" fill="#BAE6FD" stroke="#0284C7" stroke-width="5"/>
+  <rect x="88" y="68" width="124" height="28" rx="6" fill="#94A3B8" stroke="#475569" stroke-width="4"/>
+  <!-- Expansion arrows outward on metal lid -->
+  <path d="M78 82 L45 82 M58 72 L43 82 L58 92" stroke="#EF4444" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M222 82 L255 82 M242 72 L257 82 L242 92" stroke="#EF4444" stroke-width="6" stroke-linecap="round" fill="none"/>
+</svg>

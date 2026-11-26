@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Momentum ball Q = m * v -->
+  <circle cx="105" cy="120" r="42" fill="#EA580C" stroke="#9A3412" stroke-width="5"/>
+  <text x="105" y="132" text-anchor="middle" fill="#FFFFFF" font-size="32" font-weight="bold">m</text>
+  <path d="M155 120 L260 120 M240 104 L262 120 L240 136" stroke="#16A34A" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <text x="208" y="92" text-anchor="middle" fill="#15803D" font-size="30" font-weight="bold">v</text>
+</svg>

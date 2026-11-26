@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Car Seat and Passenger held safely by Seatbelt -->
+  <rect x="85" y="45" width="130" height="160" rx="20" fill="#3B82F6" stroke="#1E3A8A" stroke-width="5"/>
+  <circle cx="150" cy="85" r="22" fill="#FDBA74"/>
+  <rect x="115" y="112" width="70" height="75" rx="12" fill="#22C55E"/>
+  <!-- Diagonal and horizontal seatbelt straps -->
+  <line x1="95" y1="65" x2="195" y2="175" stroke="#1E293B" stroke-width="14" stroke-linecap="round"/>
+  <line x1="100" y1="175" x2="200" y2="175" stroke="#1E293B" stroke-width="14" stroke-linecap="round"/>
+  <rect x="188" y="164" width="22" height="22" rx="4" fill="#EF4444"/>
+</svg>

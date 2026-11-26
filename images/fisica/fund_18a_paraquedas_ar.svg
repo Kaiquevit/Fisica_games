@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Parachute catching air resistance -->
+  <path d="M65 110 A85 75 0 0 1 235 110 Z" fill="#EF4444" stroke="#991B1B" stroke-width="4"/>
+  <line x1="70" y1="110" x2="145" y2="175" stroke="#475569" stroke-width="3"/>
+  <line x1="150" y1="110" x2="150" y2="175" stroke="#475569" stroke-width="3"/>
+  <line x1="230" y1="110" x2="155" y2="175" stroke="#475569" stroke-width="3"/>
+  <rect x="135" y="175" width="30" height="30" rx="6" fill="#2563EB"/>
+  <!-- Upward air drag arrows -->
+  <path d="M105 145 L105 118 M97 126 L105 116 L113 126" stroke="#38BDF8" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M195 145 L195 118 M187 126 L195 116 L203 126" stroke="#38BDF8" stroke-width="5" stroke-linecap="round" fill="none"/>
+</svg>

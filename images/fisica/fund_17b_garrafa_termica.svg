@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Thermal Flask (Garrafa Térmica) keeping heat inside -->
+  <rect x="105" y="65" width="90" height="145" rx="18" fill="#2563EB" stroke="#1E3A8A" stroke-width="5"/>
+  <rect x="122" y="38" width="56" height="27" rx="6" fill="#EF4444" stroke="#991B1B" stroke-width="4"/>
+  <!-- Inner reflection arrows showing heat trapped inside -->
+  <path d="M130 115 L170 115 M160 107 L172 115 L160 123" stroke="#FEF08A" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <path d="M170 155 L130 155 M140 147 L128 155 L140 163" stroke="#FEF08A" stroke-width="5" stroke-linecap="round" fill="none"/>
+</svg>

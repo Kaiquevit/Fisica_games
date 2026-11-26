@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- 2D Projectile Parabola with v0x and v0y components -->
+  <line x1="35" y1="195" x2="275" y2="195" stroke="#334155" stroke-width="5"/>
+  <path d="M45 195 Q155 25 265 195" fill="none" stroke="#2563EB" stroke-width="5" stroke-dasharray="7,6"/>
+  <!-- Launch vector v0 -->
+  <path d="M45 195 L105 110 M92 115 L107 108 L104 124" stroke="#EF4444" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <!-- Horizontal component v0x -->
+  <path d="M45 195 L110 195 M98 187 L112 195 L98 203" stroke="#16A34A" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <circle cx="155" cy="110" r="10" fill="#F97316"/>
+</svg>

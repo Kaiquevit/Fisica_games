@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Open sheet of paper floating slowly on left vs crumpled paper ball falling fast on right -->
+  <path d="M45 95 Q85 110 125 90 L135 120 Q95 140 55 125 Z" fill="#38BDF8" stroke="#0284C7" stroke-width="3"/>
+  <path d="M90 165 L90 135 M82 145 L90 133 L98 145" stroke="#16A34A" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Crumpled ball on right -->
+  <circle cx="215" cy="155" r="24" fill="#94A3B8" stroke="#475569" stroke-width="4"/>
+  <path d="M215 65 L215 120 M205 108 L215 122 L225 108" stroke="#EF4444" stroke-width="6" stroke-linecap="round" fill="none"/>
+</svg>

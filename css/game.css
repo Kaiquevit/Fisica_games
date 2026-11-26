@@ -1112,9 +1112,17 @@ main {
   transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
-.btn-continue:hover {
+.btn-continue:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 14px 30px rgba(22, 163, 74, 0.55);
+}
+
+.btn-continue:disabled {
+  background: #334155;
+  color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
 
 /* Modal de Vitória / Fim de Duelo */

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Tower and Free-Falling Ball at t=1s, t=2s, t=3s -->
+  <rect x="55" y="35" width="48" height="175" fill="#94A3B8" stroke="#475569" stroke-width="4"/>
+  <line x1="25" y1="210" x2="275" y2="210" stroke="#334155" stroke-width="5"/>
+  <circle cx="155" cy="48" r="10" fill="#EF4444" opacity="0.4"/>
+  <circle cx="155" cy="95" r="11" fill="#EF4444" opacity="0.7"/>
+  <circle cx="155" cy="175" r="13" fill="#EF4444"/>
+  <path d="M185 50 L185 185 M175 170 L185 187 L195 170" stroke="#2563EB" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <text x="218" y="125" text-anchor="middle" fill="#1E3A8A" font-size="28" font-weight="bold">g</text>
+</svg>

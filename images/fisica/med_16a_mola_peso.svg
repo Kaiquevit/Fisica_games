@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Vertical Spring stretched by hanging block (Hooke's Law) -->
+  <rect x="95" y="22" width="110" height="12" rx="4" fill="#334155"/>
+  <polyline points="150,34 125,50 175,68 125,86 175,104 125,122 150,138" fill="none" stroke="#475569" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="115" y="138" width="70" height="62" rx="8" fill="#2563EB" stroke="#1E3A8A" stroke-width="4"/>
+  <!-- Upward restoring elastic force Fel -->
+  <path d="M215 155 L215 75 M203 90 L215 73 L227 90" stroke="#16A34A" stroke-width="6" stroke-linecap="round" fill="none"/>
+</svg>

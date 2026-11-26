@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Escape velocity formula card -->
+  <rect x="40" y="55" width="220" height="130" rx="18" fill="#0F172A" stroke="#38BDF8" stroke-width="5"/>
+  <text x="150" y="108" text-anchor="middle" fill="#38BDF8" font-size="22" font-weight="bold">Velocidade de Escape</text>
+  <text x="150" y="152" text-anchor="middle" fill="#FACC15" font-size="28" font-weight="bold">v = √(2GM / R)</text>
+</svg>

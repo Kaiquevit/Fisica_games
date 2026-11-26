@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Boot kicking a soccer ball with Force F over short time Delta t -->
+  <path d="M40 120 L85 120 L105 165 L40 165 Z" fill="#2563EB" stroke="#1E3A8A" stroke-width="4"/>
+  <circle cx="155" cy="142" r="32" fill="#F8FAFC" stroke="#1E293B" stroke-width="5"/>
+  <polygon points="155,126 168,136 163,152 147,152 142,136" fill="#1E293B"/>
+  <path d="M198 142 L272 142 M254 128 L274 142 L254 156" stroke="#EF4444" stroke-width="8" stroke-linecap="round" fill="none"/>
+</svg>

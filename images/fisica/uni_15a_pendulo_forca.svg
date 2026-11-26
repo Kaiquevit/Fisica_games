@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240">
+  <rect width="300" height="240" rx="18" fill="#FAF8F5"/>
+  <!-- Simple Pendulum of length L with restoring tangential component -mg sin(theta) -->
+  <line x1="90" y1="25" x2="170" y2="25" stroke="#334155" stroke-width="6"/>
+  <line x1="130" y1="25" x2="130" y2="195" stroke="#94A3B8" stroke-width="3" stroke-dasharray="6,6"/>
+  <line x1="130" y1="25" x2="205" y2="155" stroke="#1E293B" stroke-width="5"/>
+  <circle cx="205" cy="155" r="20" fill="#2563EB" stroke="#1E3A8A" stroke-width="4"/>
+  <!-- Restoring force arrow tangent to arc -->
+  <path d="M190 165 L145 190 M152 176 L143 191 L160 190" stroke="#EF4444" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <text x="185" y="88" text-anchor="middle" fill="#1E293B" font-size="26" font-weight="bold">L</text>
+</svg>
