@@ -1,13 +1,12 @@
-const input = document.querySelector('.login__input');
-const button = document.querySelector('.login__button');
 const form = document.querySelector('.login-form');
 const avatarMount = document.getElementById('avatar-creator-mount');
 
 let activeAvatarSlot = 1; // 1 = Jogador 1, 2 = Jogador 2
-
 const isTwoPlayerMode = (modeVal) => modeVal === 'duelo' || modeVal === 'duelo_pares';
 
-// 1. Inicializa o Criador de Avatar com suporte a Jogador 1 e Jogador 2
+// ============================================================================
+// 1. ABA SEPARADA DE CRIAÇÃO DE AVATAR (avatar.html)
+// ============================================================================
 if (avatarMount && window.PhysicsAvatar) {
   const opts = window.PhysicsAvatar.AVATAR_OPTIONS;
 
@@ -34,7 +33,7 @@ if (avatarMount && window.PhysicsAvatar) {
         <button type="button" class="avatar-slot-tab ${
           activeAvatarSlot === 2 ? 'active-slot-2' : ''
         }" data-slot="2">
-          ⚔️ Avatar Jogador 2 (Duelo)
+          ⚔️ Avatar Jogador 2
         </button>
       </div>
 
@@ -44,7 +43,7 @@ if (avatarMount && window.PhysicsAvatar) {
             ${window.PhysicsAvatar.renderSVG(currentCfg)}
           </div>
           <button type="button" class="btn-random-avatar" id="btn-random-avatar">
-            🎲 Aleatório (J${activeAvatarSlot})
+            🎲 Sortear Visual
           </button>
         </div>
 
@@ -125,195 +124,85 @@ if (avatarMount && window.PhysicsAvatar) {
   renderAvatarCreator();
 }
 
-// 2. Garante que todas as páginas (page1.html, pag2.html, pag3.html) tenham o banner PET de Física - Kaique Vitor, os 6 modos e os 5 níveis (com Médio e Difícil)
-const ensureProjectUI = () => {
-  if (form && !form.querySelector('.project-credit-banner')) {
-    const banner = document.createElement('div');
-    banner.className = 'project-credit-banner';
-    banner.innerHTML = `
-      <span class="project-credit-tag">🎓 Projeto Acadêmico • PET de Física</span>
-      <p class="project-credit-title">
-        Desenvolvido para o <strong>PET de Física</strong> pelo aluno <strong>Kaique Vitor</strong>
-      </p>
-      <p class="project-credit-desc">
-        Ferramenta educativa gamificada com tabuleiros de <strong>24 cartas (12 pares complementares)</strong>, níveis <strong>Médio (Desenhos + Fórmulas Pela Metade)</strong> e <strong>Difícil (Equações Completas)</strong>, modos <strong>Só Encontrar Pares</strong> ou <strong>Com Quiz</strong>, e <strong>Duelo de 2 Jogadores (1v1)</strong>.
-      </p>
-    `;
-    form.prepend(banner);
-  }
+// ============================================================================
+// 2. FLUXO EM 2 ETAPAS NA HOME (index.html):
+//    Etapa 1: Modo + Nível -> Etapa 2: Nome e Preview do Avatar
+// ============================================================================
+const step1Container = document.getElementById('step-1-container');
+const step2Container = document.getElementById('step-2-container');
+const stepSubtitle = document.getElementById('step-subtitle');
+const btnNextStep = document.getElementById('btn-next-step');
+const btnBackStep = document.getElementById('btn-back-step');
+const selectedModeSummary = document.getElementById('selected-mode-summary');
 
-  const levelSelector = document.querySelector('.level-selector');
-  if (levelSelector && !levelSelector.querySelector('input[value="medio_dificil"]')) {
-    const defaultLvl = (form && form.getAttribute('data-default-level')) || 'fundamental';
-    levelSelector.innerHTML = `
-      <label class="level-option">
-        <input type="radio" name="level" value="fundamental" ${defaultLvl === 'fundamental' ? 'checked' : ''}>
-        <div class="level-card">
-          <div class="level-card-header"><span class="level-icon">🔭</span><span class="level-age">10–12 anos • Visual</span></div>
-          <div class="level-title">Fundamental (10-12)</div>
-          <p class="level-desc">100% Visual e cotidiano (24 cartas / 12 pares).</p>
-        </div>
-      </label>
-      <label class="level-option">
-        <input type="radio" name="level" value="medio" ${defaultLvl === 'medio' ? 'checked' : ''}>
-        <div class="level-card">
-          <div class="level-card-header"><span class="level-icon">🎨</span><span class="level-age">13–17 • Nível Médio</span></div>
-          <div class="level-title">Médio 13-17 (Visual + Dicas)</div>
-          <p class="level-desc">Desenhos físicos explicativos + fórmulas pela metade (ex: F = m · [ a ])!</p>
-        </div>
-      </label>
-      <label class="level-option">
-        <input type="radio" name="level" value="medio_dificil">
-        <div class="level-card">
-          <div class="level-card-header"><span class="level-icon">⚛️</span><span class="level-age">13–17 • Nível Difícil</span></div>
-          <div class="level-title">Médio 13-17 (Só Fórmulas)</div>
-          <p class="level-desc">Conecte o fenômeno diretamente à equação matemática completa!</p>
-        </div>
-      </label>
-      <label class="level-option">
-        <input type="radio" name="level" value="faculdade" ${defaultLvl === 'faculdade' ? 'checked' : ''}>
-        <div class="level-card">
-          <div class="level-card-header"><span class="level-icon">🛠️</span><span class="level-age">Faculdade • Nível Médio</span></div>
-          <div class="level-title">Física 1 (Visual + Guiado)</div>
-          <p class="level-desc">Desenhos práticos (patinador, chave inglesa, amortecedor) + fórmulas pela metade!</p>
-        </div>
-      </label>
-      <label class="level-option">
-        <input type="radio" name="level" value="faculdade_dificil">
-        <div class="level-card">
-          <div class="level-card-header"><span class="level-icon">🎓</span><span class="level-age">Faculdade • Nível Difícil</span></div>
-          <div class="level-title">Física 1 (Cálculo Puro)</div>
-          <p class="level-desc">Derivadas Vetoriais, Integrais, Produto Vetorial, Gradiente e EDOs!</p>
-        </div>
-      </label>
-    `;
-  }
-
-  const modeSelector = document.querySelector('.mode-selector');
-  if (modeSelector && !modeSelector.querySelector('input[value="duelo_pares"]')) {
-    modeSelector.innerHTML = `
-      <label class="level-option">
-        <input type="radio" name="gameMode" value="duelo_pares" checked>
-        <div class="level-card">
-          <div class="level-card-header"><span class="level-icon">⚔️</span><span class="level-age">2 Jogadores • Só Pares</span></div>
-          <div class="level-title">Duelo 1v1 (Só Pares)</div>
-          <p class="level-desc">Disputa direta (30s por turno) só de encontrar os pares, sem quiz!</p>
-        </div>
-      </label>
-      <label class="level-option">
-        <input type="radio" name="gameMode" value="duelo">
-        <div class="level-card">
-          <div class="level-card-header"><span class="level-icon">🧠</span><span class="level-age">2 Jogadores • +Quiz</span></div>
-          <div class="level-title">Duelo 1v1 + Quiz</div>
-          <p class="level-desc">Turnos de 30s com Pergunta-Desafio de Física ao acertar cada par!</p>
-        </div>
-      </label>
-      <label class="level-option">
-        <input type="radio" name="gameMode" value="solo_pares">
-        <div class="level-card">
-          <div class="level-card-header"><span class="level-icon">🧩</span><span class="level-age">1 Jogador • Só Pares</span></div>
-          <div class="level-title">Solo: Só Encontrar Pares</div>
-          <p class="level-desc">Encontre os 12 pares (24 cartas) sem perguntas de quiz!</p>
-        </div>
-      </label>
-      <label class="level-option">
-        <input type="radio" name="gameMode" value="desafio">
-        <div class="level-card">
-          <div class="level-card-header"><span class="level-icon">🔥</span><span class="level-age">1 Jogador • +Quiz</span></div>
-          <div class="level-title">Solo: Desafio com Quiz</div>
-          <p class="level-desc">Contra o tempo com perguntas-desafio bônus!</p>
-        </div>
-      </label>
-      <label class="level-option">
-        <input type="radio" name="gameMode" value="sobrevivencia">
-        <div class="level-card">
-          <div class="level-card-header"><span class="level-icon">⚡</span><span class="level-age">1 Jogador • 5 Vidas</span></div>
-          <div class="level-title">Solo: Sobrevivência</div>
-          <p class="level-desc">Radar de 3s e 5 Vidas (❤️)!</p>
-        </div>
-      </label>
-      <label class="level-option">
-        <input type="radio" name="gameMode" value="exploracao">
-        <div class="level-card">
-          <div class="level-card-header"><span class="level-icon">📘</span><span class="level-age">1 Jogador • Livre</span></div>
-          <div class="level-title">Solo: Estudo Livre + Quiz</div>
-          <p class="level-desc">Estudo livre no seu ritmo com quiz opcional.</p>
-        </div>
-      </label>
-    `;
-  }
-
-  if (input && !document.getElementById('player2-name')) {
-    const parentGroup = input.closest('.form-group');
-    if (parentGroup) {
-      parentGroup.innerHTML = `
-        <div class="players-names-grid two-players" id="players-names-grid">
-          <div>
-            <label for="player-name" class="form-label">🏷️ Nome do Jogador 1 (Azul):</label>
-            <input
-              id="player-name"
-              type="text"
-              placeholder="Nome do Jogador 1..."
-              class="login__input"
-              autocomplete="off"
-              required
-            >
-          </div>
-          <div class="p2-input-wrap" id="p2-input-wrap">
-            <label for="player2-name" class="form-label">⚔️ Nome do Jogador 2 (Laranja):</label>
-            <input
-              id="player2-name"
-              type="text"
-              placeholder="Nome do Jogador 2..."
-              class="login__input"
-              autocomplete="off"
-              value="Cientista 2"
-            >
-          </div>
-        </div>
-      `;
-    }
-  }
-};
-
-ensureProjectUI();
-
-const player1Input = document.getElementById('player-name') || document.querySelector('.login__input');
+const player1Input = document.getElementById('player-name');
 const player2Input = document.getElementById('player2-name');
 const playersNamesGrid = document.getElementById('players-names-grid');
 const p2InputWrap = document.getElementById('p2-input-wrap');
 
-const updateDuelFieldsVisibility = () => {
-  const selectedModeInput = document.querySelector('input[name="gameMode"]:checked');
-  const isDuel = selectedModeInput && isTwoPlayerMode(selectedModeInput.value);
-  if (p2InputWrap && playersNamesGrid) {
-    if (isDuel) {
-      p2InputWrap.classList.remove('hidden');
-      playersNamesGrid.classList.add('two-players');
-    } else {
-      p2InputWrap.classList.add('hidden');
-      playersNamesGrid.classList.remove('two-players');
-    }
+const previewP1Avatar = document.getElementById('preview-p1-avatar');
+const previewP2Avatar = document.getElementById('preview-p2-avatar');
+const btnRandP1 = document.getElementById('btn-rand-p1');
+const btnRandP2 = document.getElementById('btn-rand-p2');
+
+const MODE_NAMES = {
+  duelo_pares: '⚔️ Duelo 1v1 (Só Pares)',
+  duelo: '🧠 Duelo 1v1 + Quiz',
+  solo_pares: '🧩 Solo (Só Pares)',
+  desafio: '🔥 Solo (Desafio + Quiz)',
+  sobrevivencia: '⚡ Solo (5 Vidas)',
+  exploracao: '📘 Solo (Estudo Livre)'
+};
+
+const LEVEL_NAMES = {
+  fundamental: '🔭 Fundamental (10-12)',
+  medio: '🎨 Médio 13-17 (Visual + Dicas)',
+  medio_dificil: '⚛️ Médio 13-17 (Só Fórmulas)',
+  faculdade: '🛠️ Física 1 (Visual + Guiado)',
+  faculdade_dificil: '🎓 Física 1 (Cálculo Puro)'
+};
+
+const renderMiniAvatars = () => {
+  if (!window.PhysicsAvatar) return;
+  if (previewP1Avatar) {
+    previewP1Avatar.innerHTML = window.PhysicsAvatar.renderSVG(
+      window.PhysicsAvatar.loadConfig(1)
+    );
+  }
+  if (previewP2Avatar) {
+    previewP2Avatar.innerHTML = window.PhysicsAvatar.renderSVG(
+      window.PhysicsAvatar.loadConfig(2)
+    );
   }
 };
 
-document.querySelectorAll('input[name="gameMode"]').forEach((radio) => {
-  radio.addEventListener('change', updateDuelFieldsVisibility);
-});
+renderMiniAvatars();
 
-// 3. Preenche os nomes salvos anteriormente se existirem
-const savedPlayer1 = localStorage.getItem('player');
-if (player1Input && savedPlayer1 && savedPlayer1.trim().length >= 2) {
-  player1Input.value = savedPlayer1;
-  if (button) button.removeAttribute('disabled');
+if (btnRandP1 && window.PhysicsAvatar) {
+  btnRandP1.addEventListener('click', () => {
+    window.PhysicsAvatar.randomize(1);
+    renderMiniAvatars();
+  });
 }
 
+if (btnRandP2 && window.PhysicsAvatar) {
+  btnRandP2.addEventListener('click', () => {
+    window.PhysicsAvatar.randomize(2);
+    renderMiniAvatars();
+  });
+}
+
+// Preenche nomes salvos anteriormente
+const savedPlayer1 = localStorage.getItem('player');
+if (player1Input) {
+  player1Input.value = savedPlayer1 && savedPlayer1.trim().length >= 2 ? savedPlayer1 : 'Cientista 1';
+}
 const savedPlayer2 = localStorage.getItem('player2');
 if (player2Input) {
-  player2Input.value = savedPlayer2 || 'Cientista 2';
+  player2Input.value = savedPlayer2 && savedPlayer2.trim().length >= 2 ? savedPlayer2 : 'Cientista 2';
 }
 
-// 4. Pré-seleciona nível e modo de jogo
+// Pré-seleciona nível e modo
 const urlParams = new URLSearchParams(window.location.search);
 const presetLevel =
   urlParams.get('level') ||
@@ -329,16 +218,62 @@ if (presetMode) {
   const modeRadio = document.querySelector(`input[name="gameMode"][value="${presetMode}"]`);
   if (modeRadio) modeRadio.checked = true;
 }
-updateDuelFieldsVisibility();
 
-const validateInput = () => {
-  if (!button || !player1Input) return;
-  if (player1Input.value.trim().length >= 2) {
-    button.removeAttribute('disabled');
-  } else {
-    button.setAttribute('disabled', '');
+const goToStep2 = () => {
+  const selectedModeInput = document.querySelector('input[name="gameMode"]:checked');
+  const selectedLevelInput = document.querySelector('input[name="level"]:checked');
+  const modeVal = selectedModeInput ? selectedModeInput.value : 'duelo_pares';
+  const levelVal = selectedLevelInput ? selectedLevelInput.value : 'fundamental';
+  const isDuel = isTwoPlayerMode(modeVal);
+
+  if (selectedModeSummary) {
+    selectedModeSummary.textContent = `${MODE_NAMES[modeVal] || modeVal} • ${
+      LEVEL_NAMES[levelVal] || levelVal
+    }`;
+  }
+
+  if (p2InputWrap && playersNamesGrid) {
+    if (isDuel) {
+      p2InputWrap.classList.remove('hidden');
+      playersNamesGrid.classList.add('two-players');
+    } else {
+      p2InputWrap.classList.add('hidden');
+      playersNamesGrid.classList.remove('two-players');
+    }
+  }
+
+  if (step1Container && step2Container) {
+    step1Container.classList.add('hidden');
+    step2Container.classList.remove('hidden');
+  }
+
+  if (stepSubtitle) {
+    stepSubtitle.innerHTML = isDuel
+      ? 'Passo 2 de 2: Confirme os nomes e avatares dos <strong>2 Jogadores</strong>.'
+      : 'Passo 2 de 2: Confirme seu nome e avatar de cientista.';
+  }
+
+  if (player1Input) player1Input.focus();
+};
+
+const goToStep1 = () => {
+  if (step1Container && step2Container) {
+    step2Container.classList.add('hidden');
+    step1Container.classList.remove('hidden');
+  }
+  if (stepSubtitle) {
+    stepSubtitle.innerHTML =
+      'Passo 1 de 2: Escolha o <strong>Modo de Jogo</strong> e o <strong>Nível</strong> para começar.';
   }
 };
+
+if (btnNextStep) {
+  btnNextStep.addEventListener('click', goToStep2);
+}
+
+if (btnBackStep) {
+  btnBackStep.addEventListener('click', goToStep1);
+}
 
 const handleSubmit = (event) => {
   event.preventDefault();
@@ -359,9 +294,6 @@ const handleSubmit = (event) => {
   window.location = `pages/game.html?level=${encodeURIComponent(selectedLevel)}&mode=${encodeURIComponent(selectedMode)}`;
 };
 
-if (player1Input) {
-  player1Input.addEventListener('input', validateInput);
-}
 if (form) {
   form.addEventListener('submit', handleSubmit);
 }
